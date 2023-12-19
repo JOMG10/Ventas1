@@ -9,14 +9,21 @@
 
 // })
 
-var listaDeProductos = [];
+var listaDeProductos =  [
+    {
+        nombre: 'jose',
+        precio : 23
+    },
+    {
+        nombre: 'juan',
+        precio : 25
+    }
+];
 document.getElementById('agregarProducto').addEventListener('click', () =>{
-    const nombre = document.getElementById('nombre').value
-    const precio = document.getElementById('precio').value
+    var nombre = document.getElementById('nombre').value
+    var precio = document.getElementById('precio').value
 
     listaDeProductos.push(nombre,precio)
-
-
 })
 
 document.getElementById('listarProducto').addEventListener('click', ()=>{
@@ -25,10 +32,10 @@ document.getElementById('listarProducto').addEventListener('click', ()=>{
 
         const lista = listaDeProductos[i]
     
-        document.getElementById('nombreProducto').textContent = lista
-        document.getElementById('precioProducto').textContent = lista
+        document.getElementById('nombreProducto').textContent = lista.nombre
+        document.getElementById('precioProducto').textContent = lista.precio
     
-        console.log(lista)
+        console.log(lista.nombre, lista.precio)
     }
     
 })
