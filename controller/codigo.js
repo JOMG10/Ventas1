@@ -2,19 +2,21 @@
 
 var listaDeProductos =  [
     {
-        nombre: 'jose',
+        nombre: 'papel',
         precio : 23
     },
     {
-        nombre: 'juan',
+        nombre: 'jabon',
         precio : 25
     },
     {
-        nombre: 'juan',
+        nombre: 'refresco',
         precio : 25
     }
 ];
 
+
+// boton de agrgar un nuevo producto al inventario de productos 
 document.getElementById('agregarProducto').addEventListener('click', () =>{
     
     const nombre = document.getElementById('nombre').value;
@@ -36,36 +38,76 @@ document.getElementById('agregarProducto').addEventListener('click', () =>{
     }
 })
 
-document.addEventListener('DOMContentLoaded', () =>{
+// boton de listar productos 
 
+document.getElementById('listarProductos').addEventListener('click', () =>{
     
-    var tbody = document.querySelector('#tablaProductos tbody');
-    tbody.innerHTML = '';
+    const tbody = document.querySelector('#tablaProductos tbody');
+     tbody.innerHTML = '';
 
-    listaDeProductos.forEach((producto, i) => {
+     listaDeProductos.forEach((producto, i) => {
         const row = tbody.insertRow(i);
         const cellNombre = row.insertCell(0);
         const cellPrecio = row.insertCell(1);
 
         cellNombre.textContent = producto.nombre;
-        cellPrecio.textContent = producto.precio;
-       
+        cellPrecio.textContent = producto.precio;       
     }); 
 
 })
 
-function listarProductos() {
-    const tbody = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
-    
-    listaDeProductos.forEach((producto, i) => {
-        const row = tbody.insertRow(i);
-        const cellNombre = row.insertCell(0);
-        const cellPrecio = row.insertCell(1);
+// boton de buscar un producto para poder agregarlo a la lista de compra 
 
-        cellNombre.textContent = producto.nombre;
-        cellPrecio.textContent = producto.precio;
-    });
-}
+var columnaNombre =""
+var columnaPrecio = ""
+
+
+document.getElementById('buscarProducto').addEventListener('click', (e) =>{
+
+    e.preventDefault()   
+
+    var tbody = document.querySelector('#tablaBuscar tbody');
+    tbody.innerHTML = '';
+
+    const nombreProducto = document.getElementById('inputBuscar').value
+
+    listaDeProductos.forEach((lista)=>{
+
+        if(nombreProducto == lista.nombre){    
+
+            const row = tbody.insertRow();
+            columnaNombre = row.insertCell(0);
+            columnaPrecio = row.insertCell(1);
+
+            columnaNombre.textContent = lista.nombre;
+            columnaPrecio.textContent = "$"+lista.precio;  
+
+            document.getElementById('inputBuscar').value = ''          
+
+        }else{
+            // console.log(false)
+        }
+    })
+})
    
+// boton de agregar una nueva compra a mi lista
+
+document.getElementById('agregarCompra').addEventListener('click', ()=>{
+
+    const tbody = document.querySelector('#tablaCompras tbody')
+
+    const row = tbody.insertRow()
+    const columNombre = row.insertCell(0);
+    const columPrecio = row.insertCell(1);
+
+    columNombre.textContent = columnaNombre.textContent
+    columPrecio.textContent = columnaPrecio.textContent
+
+    console.log(columnaNombre)
+
+
+
+
+})
 
 

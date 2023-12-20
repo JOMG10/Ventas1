@@ -9,20 +9,62 @@
 <body>
     <h1>pagina principal</h1>
 
-    <div class="container">
-        
-        <button type="button" class="btn btn-primary" id="listarProducto" >LISTAR PRODUCTO</button> 
+    <div class="container-fluid">
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >AGREGAR UN NUEVO PRODUCTO</button> 
+      <!-- inicio de botones de producto  -->
+
+
+      <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalListar" id="listarProductos">LISTAR </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >AGREGAR</button> 
+      </div>
+      <br>
+      <!-- input de buscar -->
+        
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search" id="inputBuscar">
+          <button class="btn btn-outline-success"  id="buscarProducto"  data-bs-toggle="modal" data-bs-target="#modalBuscar">Search</button>          
+        </form>
+
+        <div class="modal fade" id="modalBuscar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table" id="tablaBuscar">
+                  <thead>
+                      <tr>
+                        <!-- <th scope="col">#</th> -->
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">PRECIO</th>
+                      </tr>
+                    </thead>
+                    <tbody>        
+                    </tbody>
+                  </table>    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="agregarCompra">Agregar a compra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- inicio de modal  de agregar producto-->
+              
         <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
             <h1 class="modal-title fs-5" id="titulo">Nuevo producto</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
+           </div>
+           <div class="modal-body">
             <form>
               <div class="mb-3">
                 <label class="col-form-label">Nombre del producto:</label>
@@ -41,9 +83,38 @@
         </div>
       </div>
         </div>
+        <!-- final de modal de agregarProducto  -->
+
+        <!-- modal de listar productos  -->
+        <div class="modal fade" id="modalListar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table" id="tablaProductos">
+                  <thead>
+                      <tr>
+                        <!-- <th scope="col">#</th> -->
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">PRECIO</th>
+                      </tr>
+                    </thead>
+                    <tbody>        
+                    </tbody>
+                  </table>              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
-    <table class="table" id="tablaProductos">
+    <table class="table" id="tablaCompras">
       <thead>
           <tr>
             <!-- <th scope="col">#</th> -->
@@ -53,7 +124,11 @@
         </thead>
         <tbody>        
         </tbody>
-      </table>
+      </table>            
+
+    
+
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-Ql7CHBBQNqZt3+w8bHNyWgXYI1Bvzc5+f6+MA9UZbM1gc9psI8tTL5khXTf0sfwm" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
