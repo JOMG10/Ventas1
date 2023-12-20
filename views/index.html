@@ -35,7 +35,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cerrar" >Close</button>
             <button type="button" class="btn btn-primary" id="agregarProducto">Agregar producto</button>
           </div>
         </div>
@@ -43,20 +43,15 @@
         </div>
     </div>
 
-    <table class="table">
-        <thead>
+    <table class="table" id="tablaProductos">
+      <thead>
           <tr>
             <!-- <th scope="col">#</th> -->
             <th scope="col">NOMBRE</th>
             <th scope="col">PRECIO</th>
           </tr>
         </thead>
-        <tbody>
-          <tr >
-            <!-- <th scope="row">1</th> -->
-            <td ><span id="nombreProducto"></span></td>
-            <td ><span id="precioProducto"></span></td>
-          </tr>          
+        <tbody>        
         </tbody>
       </table>
 

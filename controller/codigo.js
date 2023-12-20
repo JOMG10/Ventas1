@@ -1,13 +1,4 @@
 
-// document.getElementById('calcular').addEventListener('click',()=>{
-//     const numero1= parseFloat(document.getElementById('numero1').value)
-//     const numero2= parseFloat(document.getElementById('numero2').value)
-
-//     const suma = numero1 + numero2
-
-//     document.getElementById('resultado').innerText = suma
-
-// })
 
 var listaDeProductos =  [
     {
@@ -17,26 +8,64 @@ var listaDeProductos =  [
     {
         nombre: 'juan',
         precio : 25
+    },
+    {
+        nombre: 'juan',
+        precio : 25
     }
 ];
+
 document.getElementById('agregarProducto').addEventListener('click', () =>{
-    var nombre = document.getElementById('nombre').value
-    var precio = document.getElementById('precio').value
-
-    listaDeProductos.push(nombre,precio)
-})
-
-document.getElementById('listarProducto').addEventListener('click', ()=>{
-
-    for(var i= 0; i < listaDeProductos.length; i++){
-
-        const lista = listaDeProductos[i]
     
-        document.getElementById('nombreProducto').textContent = lista.nombre
-        document.getElementById('precioProducto').textContent = lista.precio
-    
-        console.log(lista.nombre, lista.precio)
+    const nombre = document.getElementById('nombre').value;
+    const precio = document.getElementById('precio').value;
+
+    const nuevoElemento = {
+        nombre:nombre,
+        precio:precio
     }
-    
+
+    if(!isNaN(precio) ){
+        listaDeProductos.push(nuevoElemento)
+        alert("producto agregado correctamente")
+        document.getElementById('nombre').value = '';
+        document.getElementById('precio').value = '';
+
+    }else{
+        alert("el elemento es incorrecto");
+    }
 })
+
+document.addEventListener('DOMContentLoaded', () =>{
+
+    
+    var tbody = document.querySelector('#tablaProductos tbody');
+    tbody.innerHTML = '';
+
+    listaDeProductos.forEach((producto, i) => {
+        const row = tbody.insertRow(i);
+        const cellNombre = row.insertCell(0);
+        const cellPrecio = row.insertCell(1);
+
+        cellNombre.textContent = producto.nombre;
+        cellPrecio.textContent = producto.precio;
+       
+    }); 
+
+})
+
+function listarProductos() {
+    const tbody = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
+    
+    listaDeProductos.forEach((producto, i) => {
+        const row = tbody.insertRow(i);
+        const cellNombre = row.insertCell(0);
+        const cellPrecio = row.insertCell(1);
+
+        cellNombre.textContent = producto.nombre;
+        cellPrecio.textContent = producto.precio;
+    });
+}
+   
+
 
