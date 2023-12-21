@@ -60,6 +60,7 @@ document.getElementById('listarProductos').addEventListener('click', () =>{
 
 var columnaNombre =""
 var columnaPrecio = ""
+var columnaAccion = ""
 
 
 document.getElementById('buscarProducto').addEventListener('click', (e) =>{
@@ -78,6 +79,9 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
             const row = tbody.insertRow();
             columnaNombre = row.insertCell(0);
             columnaPrecio = row.insertCell(1);
+            nuevoBoton.textContent = "Eliminar"
+           
+
 
             columnaNombre.textContent = lista.nombre;
             columnaPrecio.textContent = "$"+lista.precio;  
@@ -92,6 +96,8 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
    
 // boton de agregar una nueva compra a mi lista
 
+var nuevoBoton = document.createElement("button")
+
 document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
     const tbody = document.querySelector('#tablaCompras tbody')
@@ -99,15 +105,22 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
     const row = tbody.insertRow()
     const columNombre = row.insertCell(0);
     const columPrecio = row.insertCell(1);
+    const columAccion = row.insertCell(2);
+    nuevoBoton.textContent = "Eliminar"
 
     columNombre.textContent = columnaNombre.textContent
     columPrecio.textContent = columnaPrecio.textContent
-
-    console.log(columnaNombre)
-
-
-
+    columAccion.appendChild(nuevoBoton)
+    console.log(columAccion.appendChild(nuevoBoton))
 
 })
 
+nuevoBoton.addEventListener('click',()=>{
+    alert("boton pulsado")
+})
+
+const crearBoton = (( ) =>{
+    const nuevoBoton = document.createElement("button")
+    nuevoBoton.textContent = "mi boton"
+})
 
