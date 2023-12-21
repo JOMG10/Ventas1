@@ -78,13 +78,10 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
 
             const row = tbody.insertRow();
             columnaNombre = row.insertCell(0);
-            columnaPrecio = row.insertCell(1);
-            nuevoBoton.textContent = "Eliminar"
-           
-
+            columnaPrecio = row.insertCell(1);         
 
             columnaNombre.textContent = lista.nombre;
-            columnaPrecio.textContent = "$"+lista.precio;  
+            columnaPrecio.textContent = "$"+lista.precio;
 
             document.getElementById('inputBuscar').value = ''          
 
@@ -101,12 +98,13 @@ var nuevoBoton = document.createElement("button")
 document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
     const tbody = document.querySelector('#tablaCompras tbody')
+    nuevoBoton.textContent = "Eliminar"
+
 
     const row = tbody.insertRow()
     const columNombre = row.insertCell(0);
     const columPrecio = row.insertCell(1);
     const columAccion = row.insertCell(2);
-    nuevoBoton.textContent = "Eliminar"
 
     columNombre.textContent = columnaNombre.textContent
     columPrecio.textContent = columnaPrecio.textContent
@@ -117,10 +115,5 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
 nuevoBoton.addEventListener('click',()=>{
     alert("boton pulsado")
-})
-
-const crearBoton = (( ) =>{
-    const nuevoBoton = document.createElement("button")
-    nuevoBoton.textContent = "mi boton"
 })
 
