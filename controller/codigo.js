@@ -118,9 +118,18 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
 
     if (productoExistente) {
-        // Si el producto ya existe, actualizar la cantidad        
-        productoExistente.cantidad++   
-        console.log(productoExistente.cantidad++)
+         // Si el producto ya existe, actualizar la cantidad
+         productoExistente.cantidad++;
+
+         // Actualizar la cantidad en la tabla
+         const filas = tablaCompras.querySelectorAll('tr');
+         filas.forEach(fila => {
+             const nombreEnFila = fila.querySelector('td:first-child').textContent;
+             if (nombreEnFila === nombreVenta) {
+                 // Actualizar la cantidad en la fila correspondiente
+                 fila.querySelector('td:nth-child(3)').textContent = productoExistente.cantidad;
+             }
+         });
         
     } else {    
 
