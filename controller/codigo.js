@@ -105,17 +105,26 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
     const nombreVenta = columnaNombre.textContent
     const precioVenta = columnaPrecio.textContent
-    const cantidad = 0
 
     const nuevoProducto = {
         nombre:nombreVenta,
         precio:precioVenta,
-        cantidad: cantidad
-    }
+        cantidad:1
+    } 
+
+    // Buscar si el producto ya está en la lista
+    const productoExistente = listaVenta.find(producto => producto.nombre === nombreVenta);
+
+
+
+    if (productoExistente) {
+        // Si el producto ya existe, actualizar la cantidad        
+        productoExistente.cantidad++   
+        console.log(productoExistente.cantidad++)
+        
+    } else {    
 
     listaVenta.push(nuevoProducto)
-    
-
     const nuevaFila = document.createElement("tr");    
 
     nuevaFila.innerHTML = `
@@ -127,10 +136,14 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
         <button class="btn btn-primary">editar</button>
     </td>`;
 
-tablaCompras.appendChild(nuevaFila);
+    tablaCompras.appendChild(nuevaFila);
+
+    }
 
     
-})
+});
+
+
 nuevoBoton.addEventListener('click',()=>{
     alert("boton pulsado")
 })
