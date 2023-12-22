@@ -8,6 +8,7 @@ var listaDeProductos =  [
     {
         nombre: 'jabon',
         precio : 25
+        
     },
     {
         nombre: 'refresco',
@@ -52,7 +53,7 @@ document.getElementById('listarProductos').addEventListener('click', () =>{
 
         cellNombre.textContent = producto.nombre;
         cellPrecio.textContent = producto.precio;       
-    }); 
+    });
 
 })
 
@@ -62,6 +63,8 @@ var columnaNombre =""
 var columnaPrecio = ""
 var columnaAccion = ""
 
+var nombreProducto = ""
+
 
 document.getElementById('buscarProducto').addEventListener('click', (e) =>{
 
@@ -70,7 +73,7 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
     var tbody = document.querySelector('#tablaBuscar tbody');
     tbody.innerHTML = '';
 
-    const nombreProducto = document.getElementById('inputBuscar').value
+    nombreProducto = document.getElementById('inputBuscar').value
 
     listaDeProductos.forEach((lista)=>{
 
@@ -94,26 +97,45 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
 // boton de agregar una nueva compra a mi lista
 
 var nuevoBoton = document.createElement("button")
-
+var listaVenta = []
+let content = "";
 document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
-    const tbody = document.querySelector('#tablaCompras tbody')
-    nuevoBoton.textContent = "Eliminar"
+    const tablaCompras = document.querySelector('#tablaCompras tbody')
 
+    const nombreVenta = columnaNombre.textContent
+    const precioVenta = columnaPrecio.textContent
+    const cantidad = 0
 
-    const row = tbody.insertRow()
-    const columNombre = row.insertCell(0);
-    const columPrecio = row.insertCell(1);
-    const columAccion = row.insertCell(2);
+    const nuevoProducto = {
+        nombre:nombreVenta,
+        precio:precioVenta,
+        cantidad: cantidad
+    }
 
-    columNombre.textContent = columnaNombre.textContent
-    columPrecio.textContent = columnaPrecio.textContent
-    columAccion.appendChild(nuevoBoton)
-    console.log(columAccion.appendChild(nuevoBoton))
+    listaVenta.push(nuevoProducto)
+    
 
+    const nuevaFila = document.createElement("tr");    
+
+    nuevaFila.innerHTML = `
+    <td>${nuevoProducto.nombre}</td>
+    <td>${nuevoProducto.precio}</td>
+    <td>${nuevoProducto.cantidad}</td>
+    <td>
+        <button class="btn btn-primary" id="botonBorrar">borrar</button>
+        <button class="btn btn-primary">editar</button>
+    </td>`;
+
+tablaCompras.appendChild(nuevaFila);
+
+    
 })
-
 nuevoBoton.addEventListener('click',()=>{
     alert("boton pulsado")
 })
 
+// const botonBorrar = document.getElementById('botonBorrar');
+// botonBorrar.addEventListener('click', ()=>{
+//     console.log("boton pulsado de borrar")
+// })
