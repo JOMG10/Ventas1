@@ -89,7 +89,8 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
             document.getElementById('inputBuscar').value = ''          
 
         }else{
-            // console.log(false)
+            // alert("el producto no existe")
+
         }
     })
 })
