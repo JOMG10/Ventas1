@@ -100,9 +100,11 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
 var nuevoBoton = document.createElement("button")
 var listaVenta = []
 let content = "";
+
+var tablaCompras = document.querySelector('#tablaCompras tbody')
+
 document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
-    const tablaCompras = document.querySelector('#tablaCompras tbody')
 
     const nombreVenta = columnaNombre.textContent
     const precioVenta = columnaPrecio.textContent
@@ -142,18 +144,34 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
     <td>${nuevoProducto.precio}</td>
     <td>${nuevoProducto.cantidad}</td>
     <td>
-        <button class="btn btn-primary" id="botonBorrar">borrar</button>
+        <button class="btn btn-primary " onclick="eliminarFila(i)">borrar</button>
         <button class="btn btn-primary">editar</button>
     </td>`;
 
     tablaCompras.appendChild(nuevaFila);
 
     }
-
     
 });
 
+const eliminarFila = (i)=>{
+    console.log(i)
+    listaVenta.forEach((nombre,i )=>{
+        // console.log(nombre)            
 
+        if(nombre.nombre == fila){
+            console.log(nombre.nombre)
+          
+        }
+    })
+
+}
+
+
+
+// tablaCompras.forEach((contenido)=>{
+//     console.log(contenido)
+// })
 nuevoBoton.addEventListener('click',()=>{
     alert("boton pulsado")
 })
