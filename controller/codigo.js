@@ -144,7 +144,7 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
     <td>${nuevoProducto.precio}</td>
     <td>${nuevoProducto.cantidad}</td>
     <td>
-        <button class="btn btn-primary " onclick="eliminarFila(i)">borrar</button>
+        <button class="btn btn-primary " id="btn-borrar">borrar</button>
         <button class="btn btn-primary">editar</button>
     </td>`;
 
@@ -154,18 +154,24 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
     
 });
 
-const eliminarFila = (i)=>{
-    console.log(i)
-    listaVenta.forEach((nombre,i )=>{
-        // console.log(nombre)            
+document.getElementById('btn-borrar').addEventListener('click',()=>{
+    console.log("dando click en el boton borrar")
+})
 
-        if(nombre.nombre == fila){
-            console.log(nombre.nombre)
+
+
+// const eliminarFila = (i)=>{
+//     console.log(i)
+//     listaVenta.forEach((nombre,i )=>{
+//         // console.log(nombre)            
+
+//         if(nombre.nombre == fila){
+//             console.log(nombre.nombre)
           
-        }
-    })
+//         }
+//     })
 
-}
+// }
 
 
 
