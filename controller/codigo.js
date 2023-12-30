@@ -1,4 +1,15 @@
 
+var columnaNombre =""
+var columnaPrecio = ""
+var columnaAccion = ""
+var nombreProducto = ""
+var nuevoBoton = document.createElement("button")
+var listaVenta = []
+let content = "";
+totalVenta.textContent = "0.0"
+let total = 0;
+var tablaCompras = document.querySelector('#tablaCompras tbody')
+
 
 var listaDeProductos =  [
     {
@@ -59,13 +70,6 @@ document.getElementById('listarProductos').addEventListener('click', () =>{
 
 // boton de buscar un producto para poder agregarlo a la lista de compra 
 
-var columnaNombre =""
-var columnaPrecio = ""
-var columnaAccion = ""
-
-var nombreProducto = ""
-
-
 document.getElementById('buscarProducto').addEventListener('click', (e) =>{
 
     e.preventDefault()   
@@ -84,7 +88,7 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
             columnaPrecio = row.insertCell(1);         
 
             columnaNombre.textContent = lista.nombre;
-            columnaPrecio.textContent = "$"+lista.precio;
+            columnaPrecio.textContent = lista.precio;
 
             document.getElementById('inputBuscar').value = ''          
 
@@ -96,12 +100,6 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
 })
    
 // boton de agregar una nueva compra a mi lista
-
-var nuevoBoton = document.createElement("button")
-var listaVenta = []
-let content = "";
-
-var tablaCompras = document.querySelector('#tablaCompras tbody')
 
 document.getElementById('agregarCompra').addEventListener('click', ()=>{
 
@@ -137,52 +135,31 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
     } else {    
 
     listaVenta.push(nuevoProducto)
-    const nuevaFila = document.createElement("tr");    
+    const nuevaFila = document.createElement("tr");   
 
-    nuevaFila.innerHTML = `
+    nuevaFila.innerHTML += `
     <td>${nuevoProducto.nombre}</td>
     <td>${nuevoProducto.precio}</td>
     <td>${nuevoProducto.cantidad}</td>
     <td>
-        <button class="btn btn-primary " id="btn-borrar">borrar</button>
+        <button class="btn btn-primary " onclick="deleteProducto()">borrar</button>
         <button class="btn btn-primary">editar</button>
-    </td>`;
+    </td>`;     
 
-    tablaCompras.appendChild(nuevaFila);
+    tablaCompras.appendChild(nuevaFila);    
 
-    }
-    
+   }
+
+   calcularTotal(parseFloat(nuevoProducto.precio)); 
+
 });
 
-document.getElementById('btn-borrar').addEventListener('click',()=>{
-    console.log("dando click en el boton borrar")
-})
+const deleteProducto = () =>{
+    console.log("dio click en el booton")
 
+}
 
-
-// const eliminarFila = (i)=>{
-//     console.log(i)
-//     listaVenta.forEach((nombre,i )=>{
-//         // console.log(nombre)            
-
-//         if(nombre.nombre == fila){
-//             console.log(nombre.nombre)
-          
-//         }
-//     })
-
-// }
-
-
-
-// tablaCompras.forEach((contenido)=>{
-//     console.log(contenido)
-// })
-nuevoBoton.addEventListener('click',()=>{
-    alert("boton pulsado")
-})
-
-// const botonBorrar = document.getElementById('botonBorrar');
-// botonBorrar.addEventListener('click', ()=>{
-//     console.log("boton pulsado de borrar")
-// })
+const calcularTotal = (precio)=>{
+      total += precio;    
+      totalVenta.textContent = total.toFixed(2); 
+}
