@@ -81,21 +81,29 @@ document.getElementById('buscarProducto').addEventListener('click', (e) =>{
 
     listaDeProductos.forEach((lista)=>{
 
-        if(nombreProducto == lista.nombre){    
-
-            const row = tbody.insertRow();
-            columnaNombre = row.insertCell(0);
-            columnaPrecio = row.insertCell(1);         
-
-            columnaNombre.textContent = lista.nombre;
-            columnaPrecio.textContent = lista.precio;
-
-            document.getElementById('inputBuscar').value = ''          
+        if(nombreProducto == ''){
+            console.log("no haas insertado ningun producyo")
 
         }else{
-            // alert("el producto no existe")
+            if(nombreProducto == lista.nombre){    
+
+                const row = tbody.insertRow();
+                columnaNombre = row.insertCell(0);
+                columnaPrecio = row.insertCell(1);         
+    
+                columnaNombre.textContent = lista.nombre;
+                columnaPrecio.textContent = lista.precio;
+    
+                document.getElementById('inputBuscar').value = ''          
+    
+            }else{
+                // alert("el producto no existe")
+    
+            }
 
         }
+
+        
     })
 })
    
