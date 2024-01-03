@@ -150,8 +150,8 @@ document.getElementById('agregarCompra').addEventListener('click', ()=>{
     <td>${nuevoProducto.precio}</td>
     <td>${nuevoProducto.cantidad}</td>
     <td>
-        <button class="btn btn-primary " onclick="deleteProducto()">borrar</button>
-        <button class="btn btn-primary">editar</button>
+    <button class="btn btn-primary" onclick="borrar(this)" value="Borrar">borrar</button>
+    <button class="btn btn-primary">editar</button>
     </td>`;     
 
     tablaCompras.appendChild(nuevaFila);    
@@ -171,3 +171,9 @@ const calcularTotal = (precio)=>{
       total += precio;    
       totalVenta.textContent = total.toFixed(2); 
 }
+
+
+function borrar(valor){
+    console.log("click en botn de borrar" + valor.i)  
+}
+
