@@ -10,22 +10,9 @@ totalVenta.textContent = "0.0"
 let total = 0;
 var tablaCompras = document.querySelector('#tablaCompras tbody')
 
+var listaDeProductos= []
 
-var listaDeProductos =  [
-    {
-        nombre: 'papel',
-        precio : 23
-    },
-    {
-        nombre: 'jabon',
-        precio : 25
-        
-    },
-    {
-        nombre: 'refresco',
-        precio : 25
-    }
-];
+
 
 
 // boton de agrgar un nuevo producto al inventario de productos 
