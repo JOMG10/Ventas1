@@ -1,85 +1,49 @@
 
 
-const btnPaginacion = document.getElementById("buttonPaginacion");
-const contenido = document.getElementById("contenido");
+
+const inputBuscar= document.getElementById("inputBuscar");
+const buscarProducto=document.getElementById("buscarProducto")
 
 const productos = new Producto()
+const listaVenta =[]
+const nuevoProducto = {} 
 
-const btnAgregarProducto= document.getElementById("")
+// const btnAgregarProducto= document.getElementById("")
 
-productos.agregarProductos("jabon",25,2020)
+// productos.agregarProductos("jabon",25,2020)
 const obtenerProductos = productos.obtenerProductos()
 
-console.log( productos.obtenerProductos())
+
+// boton de agregar una nueva compra a mi lista
 
 
-//   contenido.innerHTML += `
-// <iframe src="pagina1.html" frameborder="0" width="100%" height="500px"></iframe>    
-// `;
+document.getElementById('buscarProducto').addEventListener('click', (e)=>{
+  e.preventDefault()
 
-const paginacion = (pagina) => {
+  const inputBusca = inputBuscar.value
 
-  contenido.innerHTML = "";
+ obtenerProductos.forEach((element)=>{
 
-  switch (pagina) {
-    case 1:
-      if (pagina === 1) {
-        contenido.innerHTML += `
-                <iframe src="pagina1.html" frameborder="0" width="100%" height="600px"></iframe>    
-                `;
-      }
-      break;
+  if(inputBusca ===element.nombre){
 
-    case 2:
-      if (pagina === 2) {
-        contenido.innerHTML += `
-                    <iframe src="pagina2.html" frameborder="0" width="100%" height="500px"></iframe>    
-                    `;
-      }
-      break;
-
-    case 3:
-      if (pagina === 3) {
-        contenido.innerHTML += `
-                        <iframe src="pagina3.html" frameborder="0" width="100%" height="500px"></iframe>    
-                        `;
-      }
-      break;
-
-    case 4:
-      if (pagina === 4) {
-        contenido.innerHTML += `
-                        <iframe src="pagina4.html" frameborder="0" width="100%" height="500px"></iframe>    
-                        `;
-      }
-      break;
-
-    case 5:
-      if (pagina === 5) {
-        contenido.innerHTML += `
-                          <iframe src="pagina5.html" frameborder="0" width="100%" height="500px"></iframe>    
-                          `;
-      }
-      break;
-
-    case 6:
-      if (pagina === 6) {
-        contenido.innerHTML += `
-                              <iframe src="pagina6.html" frameborder="0" width="100%" height="500px"></iframe>    
-                              `;
-      }
-      break;
-
-    case 7:
-      if (pagina === 7) {
-        contenido.innerHTML += `
-                                  <iframe src="pagina7.html" frameborder="0" width="100%" height="500px"></iframe>    
-                                  `;
-      }
-      break;
+    const nombre =element.nombre
+    const precio = element.precio
+    agregarfila(nombre, precio)
   }
-};
+ }) 
+
+ })
+
+const agregarfila = (nombre, precio)=>{
+  var tbody = document.querySelector('#tablaProductos tbody')
+  const row = tbody.insertRow();
+                columnaNombre = row.insertCell(0);
+                columnaPrecio = row.insertCell(1);         
+    
+                columnaNombre.textContent = nombre;
+                columnaPrecio.textContent = precio;
+    
+                document.getElementById('inputBuscar').value = ''          
 
 
-
-
+}

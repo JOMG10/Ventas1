@@ -5,12 +5,12 @@ class Producto {
     constructor(){
         this.productos =[
             {
-                nombre:"",
-                precio:50,
-                codigo:50
+                nombre:"papel",
+                precio:30,
+                codigo:60
             },
             {
-                nombre:"",
+                nombre:"jabon",
                 precio:50,
                 codigo:50
             },
