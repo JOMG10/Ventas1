@@ -1,12 +1,11 @@
 const btnPaginacion = document.getElementById("buttonPaginacion");
 const contenido = document.getElementById("contenido");
 
-contenido.innerHTML += `
-<iframe src="pagina1.html" frameborder="0" width="100%" height="500px"></iframe>    
-`;
+//   contenido.innerHTML += `
+// <iframe src="pagina1.html" frameborder="0" width="100%" height="500px"></iframe>    
+// `;
 
 const paginacion = (pagina) => {
-  const contenido = document.getElementById("contenido");
 
   // Limpia el contenido existente
   contenido.innerHTML = "";
@@ -16,7 +15,7 @@ const paginacion = (pagina) => {
       // Cambié el operador de comparación en la condición a "=="
       if (pagina === 1) {
         contenido.innerHTML += `
-                <iframe src="pagina1.html" frameborder="0" width="100%" height="500px"></iframe>    
+                <iframe src="pagina1.html" frameborder="0" width="100%" height="600px"></iframe>    
                 `;
       }
       break;
@@ -70,3 +69,4 @@ const paginacion = (pagina) => {
       break;
   }
 };
+

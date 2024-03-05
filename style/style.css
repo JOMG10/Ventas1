@@ -2,9 +2,14 @@
     margin-top: 25%;
 }
 
-.divTotal{
-    margin-left: 60%;   
+header{
+    height: 20%;
 }
+
+footer{
+    height:0%;
+}
+
 
 body {
     font-family: Arial, sans-serif;
@@ -27,15 +32,22 @@ button {
     cursor: pointer;
 }
 
-.contenido {
-    padding: 20px;
-}
 
 .btn-final{
-    margin-left: 120px;
+    margin-left: 25%;
 }
 
 /* pagina1 */
 .title{
+    margin-top: 2px;
+    padding: 0;
     background-color: aqua;
+}
+
+.search{
+    width: 50%;
+}
+
+.tabla-completo{
+    height: 80%;
 }
