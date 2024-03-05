@@ -10,7 +10,22 @@
 <header>
   <h1>eleventa</h1>  
   <div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalListar" id="listarProductos" >VENTAS </button>
+ 
+    <button type="button" class="btn btn-primary" onclick="paginacion(1)">VENTAS </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(2)">CREDITOS </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(3)">CLIENTES </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(4)">PRODUCTOS </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(5)">INVENTARIO </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(6)">COMPRAS </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(7)">CONFIGURACION </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(8)">FACTURAS </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(9)">CORTE </button>
+    <button type="button" class="btn btn-primary" onclick="paginacion(10)">REPORTES </button>
+
+
+
+
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalListar" onclick="paginacion(1)">VENTAS </button>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >CREDITOS</button> 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalListar" id="listarProductos">CLIENTES </button>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >PRODUCTOS</button> 
@@ -20,22 +35,23 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >FACTURAS</button> 
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalListar" id="listarProductos">CORTE </button>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" >REPORTES</button> 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" slot="end">SALR</button> 
-    <a href="home.html">botonm</a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" slot="end">SALR</button>  -->
 
   </div>
 
 </header>
 <body>
+
+  <div id="contenido" class="contenido">
+
+    </div>
+
    
-    <div class="container-fluid">
-
-      <!-- inicio de botones de producto  -->
+    <!-- <div class="container-fluid">
 
 
-      <br>
-      <!-- input de buscar -->
-        
+
+      <br>        
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search" id="inputBuscar">
           <button class="btn btn-outline-success"  id="buscarProducto"  data-bs-toggle="modal" data-bs-target="#modalBuscar">Search</button>          
@@ -52,7 +68,6 @@
                 <table class="table" id="tablaBuscar">
                   <thead>
                       <tr>
-                        <!-- <th scope="col">#</th> -->
                         <th scope="col">NOMBRE</th>
                         <th scope="col">PRECIO</th>
                       </tr>
@@ -69,7 +84,6 @@
           </div>
         </div>
 
-        <!-- inicio de modal  de agregar producto-->
               
         <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
@@ -98,9 +112,7 @@
         </div>
       </div>
         </div>
-        <!-- final de modal de agregarProducto  -->
 
-        <!-- modal de listar productos  -->
         <div class="modal fade" id="modalListar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -112,7 +124,6 @@
                 <table class="table" id="tablaProductos">
                   <thead>
                       <tr>
-                        <!-- <th scope="col">#</th> -->
                         <th scope="col">NOMBRE</th>
                         <th scope="col">PRECIO</th>
                       </tr>
@@ -132,7 +143,6 @@
     <table class="table" id="tablaCompras">
       <thead>
           <tr>
-            <!-- <th scope="col">#</th> -->
             <th scope="col">NOMBRE</th>
             <th scope="col">PRECIO</th>
             <th scope="col">CANTIDAD</th>
@@ -145,7 +155,7 @@
 
       <div class="divTotal">
         <h1>Total <span id="totalVenta"></span></h1>
-      </div>
+      </div> -->
 
     
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-Ql7CHBBQNqZt3+w8bHNyWgXYI1Bvzc5+f6+MA9UZbM1gc9psI8tTL5khXTf0sfwm" crossorigin="anonymous"></script>
@@ -153,7 +163,10 @@
 
 
   <footer>TOTAL</footer>
-<script src="../controller/codigo.js"></script>
+  <script src="script.js"></script>
+<!-- <script src="../controller/codigo.js"></script> -->
         
 </body>
+
+
 </html>

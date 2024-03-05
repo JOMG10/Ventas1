@@ -15,6 +15,7 @@ var listaDeProductos= []
 
 
 
+
 // boton de agrgar un nuevo producto al inventario de productos 
 document.getElementById('agregarProducto').addEventListener('click', () =>{
     
@@ -157,10 +158,5 @@ const deleteProducto = () =>{
 const calcularTotal = (precio)=>{
       total += precio;    
       totalVenta.textContent = total.toFixed(2); 
-}
-
-
-function borrar(valor){
-    console.log("click en botn de borrar" + valor.i)  
 }
 
