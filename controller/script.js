@@ -19,12 +19,10 @@ console.log( productos.obtenerProductos())
 
 const paginacion = (pagina) => {
 
-  // Limpia el contenido existente
   contenido.innerHTML = "";
 
   switch (pagina) {
     case 1:
-      // Cambié el operador de comparación en la condición a "=="
       if (pagina === 1) {
         contenido.innerHTML += `
                 <iframe src="pagina1.html" frameborder="0" width="100%" height="600px"></iframe>    
