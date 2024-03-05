@@ -1,7 +1,20 @@
+
+
 class Producto {
    
     constructor(){
-        this.productos =[]
+        this.productos =[
+            {
+                nombre:"",
+                precio:50,
+                codigo:50
+            },
+            {
+                nombre:"",
+                precio:50,
+                codigo:50
+            },
+        ]
     }
 
     agregarProductos(nombre, precio, codigo){
@@ -15,7 +28,17 @@ class Producto {
         console.log('Producto agregado:', nuevoProducto);
     }
 
+    obtenerProductos() {
+        return this.productos;
+    }
+
 }
+
+
+
+
+
+
 
    
 

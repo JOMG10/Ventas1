@@ -1,5 +1,17 @@
+
+
 const btnPaginacion = document.getElementById("buttonPaginacion");
 const contenido = document.getElementById("contenido");
+
+const productos = new Producto()
+
+const btnAgregarProducto= document.getElementById("")
+
+productos.agregarProductos("jabon",25,2020)
+const obtenerProductos = productos.obtenerProductos()
+
+console.log( productos.obtenerProductos())
+
 
 //   contenido.innerHTML += `
 // <iframe src="pagina1.html" frameborder="0" width="100%" height="500px"></iframe>    
@@ -69,4 +81,7 @@ const paginacion = (pagina) => {
       break;
   }
 };
+
+
+
 
