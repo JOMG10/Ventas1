@@ -5,11 +5,6 @@ const productos = new Producto();
 const listaVenta =[]
 const nuevoProducto = {} 
 
-
-
-// const btnAgregarProducto= document.getElementById("")
-
-// productos.agregarProductos("jabon",25,2020)
 const obtenerProductos = productos.obtenerProductos()
 
 document.getElementById('buscarProducto').addEventListener('click', (e)=>{
