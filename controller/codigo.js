@@ -12,10 +12,6 @@ var tablaCompras = document.querySelector('#tablaCompras tbody')
 
 var listaDeProductos= []
 
-
-
-
-
 // boton de agrgar un nuevo producto al inventario de productos 
 document.getElementById('agregarProducto').addEventListener('click', () =>{
     
@@ -53,7 +49,6 @@ document.getElementById('listarProductos').addEventListener('click', () =>{
         cellNombre.textContent = producto.nombre;
         cellPrecio.textContent = producto.precio;       
     });
-
 })
 
 // boton de buscar un producto para poder agregarlo a la lista de compra 

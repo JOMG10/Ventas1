@@ -8,12 +8,14 @@ class Producto {
         nombre: "papel",
         precio: 30,
         cantidad: 60,
+        existencia: 2
       },
       {
         codigo: 2253,
         nombre: "jabon",
         precio: 50,
         cantidad: 50,
+        existencia:3
       },
     ];
   }
