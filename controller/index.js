@@ -33,7 +33,7 @@ const paginacion = (pagina) => {
       case 4:
         if (pagina === 4) {
           contenido.innerHTML += `
-                          <iframe src="pagina4.html" frameborder="0" width="100%" height="500px"></iframe>    
+                          <iframe src="productos.html" frameborder="0" width="100%" height="500px"></iframe>    
                           `;
         }
         break;
