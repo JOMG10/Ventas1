@@ -1,9 +1,9 @@
 <?php
 class Conexion {
-    private $host = "tu_host";
-    private $usuario = "tu_usuario";
-    private $contrasena = "tu_contrasena";
-    private $baseDatos = "tu_base_de_datos";
+    private $host = "localhost";
+    private $usuario = "root";
+    private $contrasena = "";
+    private $baseDatos = "pruebas";
 
     protected $conexion;
 
