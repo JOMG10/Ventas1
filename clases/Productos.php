@@ -1,9 +1,8 @@
 <?php
-require_once 'conexion.php';
+require_once '../conexion/conexion.php';
 
 class Productos extends Conexion {
 
-    
     public function obtenerProductos() {
         $sql = "SELECT * FROM productos";
         $result = $this->conexion->query($sql);
@@ -16,6 +15,5 @@ class Productos extends Conexion {
         return $productos;
     }
 
-    // Agrega funciones para insertar, actualizar y eliminar productos...
 }
 ?>

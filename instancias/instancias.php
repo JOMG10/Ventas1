@@ -1,6 +1,11 @@
 <?php
-require_once 'Conexion.php';
-require_once 'Productos.php';
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: *");
+
+require_once '../conexion/Conexion.php';
+require_once '../clases/Productos.php';
+
 
 $accion = isset($_GET['accion']) ? $_GET['accion'] : '';
 
@@ -8,8 +13,8 @@ if ($accion === 'obtenerProductos') {
     $productos = new Productos();
     $listaProductos = $productos->obtenerProductos();
     echo json_encode($listaProductos);
+
 } elseif ($accion === 'agregarUsuario') {
-    // Obtén los datos del formulario o solicitud AJAX
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
     $email = $_POST['email'];
@@ -18,7 +23,7 @@ if ($accion === 'obtenerProductos') {
     $resultado = $usuarios->agregarUsuario($usuario, $contrasena, $email);
     echo json_encode($resultado);
 } elseif ($accion === 'editarUsuario') {
-    // Obtén los datos del formulario o solicitud AJAX
+
     $idUsuario = $_POST['idUsuario'];
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
@@ -28,7 +33,7 @@ if ($accion === 'obtenerProductos') {
     $resultado = $usuarios->editarUsuario($idUsuario, $usuario, $contrasena, $email);
     echo json_encode($resultado);
 } elseif ($accion === 'borrarUsuario') {
-    // Obtén el ID del usuario a borrar
+
     $idUsuario = $_GET['idUsuario'];
 
     $usuarios = new Usuarios();
@@ -37,4 +42,5 @@ if ($accion === 'obtenerProductos') {
 } else {
     echo json_encode(['msg' => 'Acción no válida']);
 }
+
 ?>
