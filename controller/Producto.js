@@ -1,41 +1,41 @@
 // const db = require('../nexion/db');
 
-class Producto {
-  constructor() {
-    this.productos = [
-      {
-        codigo: 2253,
-        nombre: "papel",
-        precio: 30,
-        cantidad: 60,
-        existencia: 2
-      },
-      {
-        codigo: 2253,
-        nombre: "jabon",
-        precio: 50,
-        cantidad: 50,
-        existencia:3
-      },
-    ];
-  }
+// class Producto {
+//   constructor() {
+//     this.productos = [
+//       {
+//         codigo: 2253,
+//         nombre: "papel",
+//         precio: 30,
+//         cantidad: 60,
+//         existencia: 2
+//       },
+//       {
+//         codigo: 2253,
+//         nombre: "jabon",
+//         precio: 50,
+//         cantidad: 50,
+//         existencia:3
+//       },
+//     ];
+//   }
 
-  agregarProductos(nombre, precio, codigo, cantidad) {
-    const nuevoProducto = {
-      nombre: nombre,
-      precio: precio,
-      codigo: codigo,
-    };
+//   agregarProductos(nombre, precio, codigo, cantidad) {
+//     const nuevoProducto = {
+//       nombre: nombre,
+//       precio: precio,
+//       codigo: codigo,
+//     };
 
-    this.productos.push(nuevoProducto);
+//     this.productos.push(nuevoProducto);
 
-    console.log("Producto agregado:", nuevoProducto);
-  }
+//     console.log("Producto agregado:", nuevoProducto);
+//   }
 
-  obtenerProductos() {
-    return this.productos;
-  }
-}
+//   obtenerProductos() {
+//     return this.productos;
+//   }
+// }
 
 //   static obtenerTodos(callback) {
 //     const sql = 'SELECT * FROM Productos';

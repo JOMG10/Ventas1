@@ -1,6 +1,6 @@
 <?php
 
-class Usuario
+class Producto
 {
     private $mysqli;
 
@@ -25,11 +25,6 @@ class Usuario
         return $query ? ['msg' => 'OK'] : ['msg' => 'Error al editar usuario'];
     }
 
-    // Otros métodos CRUD...
-
-    // Puedes agregar métodos para obtener, borrar, listar usuarios, etc.
-
-    // Por ejemplo, un método para obtener un usuario por su ID
     public function obtenerUsuarioPorId($idUsuario)
     {
         $sql = "SELECT * FROM usuarios WHERE idUsuario='$idUsuario'";
@@ -39,13 +34,13 @@ class Usuario
     }
 }
 
-// Uso de la clase
-$usuarioClass = new Usuario($mysqli);
+// // Uso de la clase
+// $usuarioClass = new Usuario($mysqli);
 
-// Ejemplo de agregar un usuario
-$json = file_get_contents("php://input");
-$objEmpleado = json_decode($json);
+// // Ejemplo de agregar un usuario
+// $json = file_get_contents("php://input");
+// $objEmpleado = json_decode($json);
 
-$response = $usuarioClass->agregarUsuario($objEmpleado->usuario, $objEmpleado->contrasena, $objEmpleado->email);
+// $response = $usuarioClass->agregarUsuario($objEmpleado->usuario, $objEmpleado->contrasena, $objEmpleado->email);
 
-echo json_encode($response);
+// echo json_encode($response);
