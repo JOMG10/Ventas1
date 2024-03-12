@@ -1,46 +1,46 @@
-const inputBuscar= document.getElementById("inputBuscar");
-const buscarProducto=document.getElementById("buscarProducto")
+// const inputBuscar= document.getElementById("inputBuscar");
+// const buscarProducto=document.getElementById("buscarProducto")
 
-const productos = new Producto();
-const listaVenta =[]
-const nuevoProducto = {} 
+// const productos = new Producto();
+// const listaVenta =[]
+// const nuevoProducto = {} 
 
-const obtenerProductos = productos.obtenerProductos()
+// const obtenerProductos = productos.obtenerProductos()
 
-document.getElementById('buscarProducto').addEventListener('click', (e)=>{
-  e.preventDefault()
+// document.getElementById('buscarProducto').addEventListener('click', (e)=>{
+//   e.preventDefault()
 
-  const inputBusca = inputBuscar.value
+//   const inputBusca = inputBuscar.value
 
-  obtenerProductos.forEach((element)=>{
+//   obtenerProductos.forEach((element)=>{
 
-   if(inputBusca ===element.nombre){
+//    if(inputBusca ===element.nombre){
 
-    const codigo = element.codigo
-    const nombre =element.nombre
-    const precio = element.precio
-    const cantidad = element.cantidad
+//     const codigo = element.codigo
+//     const nombre =element.nombre
+//     const precio = element.precio
+//     const cantidad = element.cantidad
     
-    agregarfila(codigo, nombre, precio,cantidad)
-  }
- }) 
+//     agregarfila(codigo, nombre, precio,cantidad)
+//   }
+//  }) 
 
- })
+//  })
 
-const agregarfila = (codigo, nombre, precio,cantidad)=>{
-  var tbody = document.querySelector('#tablaProductos tbody')
-  const row = tbody.insertRow();
-                columnaCodigo = row.insertCell(0);
-                columnaNombre = row.insertCell(1);
-                columnaPrecio = row.insertCell(2);  
-                columnaCantidad = row.insertCell(3);
+// const agregarfila = (codigo, nombre, precio,cantidad)=>{
+//   var tbody = document.querySelector('#tablaProductos tbody')
+//   const row = tbody.insertRow();
+//                 columnaCodigo = row.insertCell(0);
+//                 columnaNombre = row.insertCell(1);
+//                 columnaPrecio = row.insertCell(2);  
+//                 columnaCantidad = row.insertCell(3);
 
-                columnaCodigo.textContent = codigo    
-                columnaNombre.textContent = nombre;
-                columnaPrecio.textContent = precio;
-                columnaCantidad.textContent = cantidad
+//                 columnaCodigo.textContent = codigo    
+//                 columnaNombre.textContent = nombre;
+//                 columnaPrecio.textContent = precio;
+//                 columnaCantidad.textContent = cantidad
     
-                document.getElementById('inputBuscar').value = ''          
+//                 document.getElementById('inputBuscar').value = ''          
 
 
-}
+// }
