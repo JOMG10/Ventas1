@@ -12,7 +12,6 @@
     obtenerProductos();
 
     const mostrarDatos =(data)=>{
-
         
         const tbody = document.querySelector('#tablaProductos tbody');
         tbody.innerHTML = '';
