@@ -42,23 +42,22 @@
         </div>
 
         <div class="checkbox">
-          <label class="form-check-label" for="flexCheckDefault">
-            Se vende:
-          </label>
-  
-            <div class="form-check form-check-inline" >
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-              <label class="form-check-label" for="inlineCheckbox1">Por unidad/pza</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-              <label class="form-check-label" for="inlineCheckbox2">A granel (usa decimales)</label>
-            </div>
-  
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
-              <label class="form-check-label" for="inlineCheckbox3">A granel (usa decimales)</label>
-            </div>
+          <label for="">Se vende: </label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Por unidad/Pza</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">A granel (Usa Decimales)</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+            <label class="form-check-label" for="inlineRadio3">Como paquete(kit)</label>
+          </div>
+         
+         
                   </div>
         
         <div class="input-group " style="width: 20%;">
@@ -89,11 +88,14 @@
 
 
 
-          
-          
-        <div class="input-group " style="width: 50%;">
+          <div class="input-group " style="width: 20%;">
             <span class="input-group-text" id="basic-addon1">Departamento</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <select class="form-select form-select-sm" aria-label="Small select example">
+              <option selected>- Sin Departamento</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>          
           </div>
 
           <div class="checkbox">

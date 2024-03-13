@@ -22,7 +22,7 @@ h4{
     font-weight: bold;
   }
 
-  .card-body input{
+  .card-body input, .card-body select{
     font-size: 12px; 
     margin-top: 3px;
   }
