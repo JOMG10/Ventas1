@@ -27,9 +27,12 @@ h4{
     margin-top: 3px;
   }
 
+.card-body {
+    overflow-y: auto; 
+    max-height: 60vh; 
+  }
+  
 
-  .carta{
-    flex: 1;
-    overflow-y: auto; /* Añadir desplazamiento vertical si es necesario */
-    box-sizing: border-box;
+  .btn-agregar{
+margin-top: 5px;
   }
