@@ -1,0 +1,36 @@
+.card-body {
+  overflow-y: auto; 
+  max-height: 60vh; 
+}
+
+
+.div-se-vende{
+    margin-left: 20px;
+}
+
+.checkbox{
+    text-align: left;
+    padding-left: 50px;
+}
+
+.div-inputs{
+    width: 600px;
+}
+
+
+ .card-body label , .card-body span {
+    font-size: 12px; 
+    margin-top: 3px;
+    font-weight: bold;
+  }
+
+  .card-body input, .card-body select{
+    font-size: 12px; 
+    margin-top: 3px;
+  }
+
+
+
+  .btn-agregar{
+margin-top: 5px;
+  }

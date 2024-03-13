@@ -1,0 +1,29 @@
+
+  
+.tabla-contenedor {
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    height: 70%; /* Ajusta la altura según sea necesario */
+    overflow: auto; /* Añade un scroll si la tabla es más grande que el contenedor */
+   
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+.cabecera{
+    margin-top: 10px;
+}
+
+th, td {
+    border:1px  solid #ddd;
+    text-align: left;
+    font-size: 11px; 
+
+}
+
+th {
+    background-color: #f2f2f2;
+}

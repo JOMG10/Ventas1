@@ -6,13 +6,13 @@ header("Access-Control-Allow-Headers: *");
 require_once '../conexion/Conexion.php';
 require_once '../clases/Productos.php';
 
-
 $accion = isset($_GET['accion']) ? $_GET['accion'] : '';
 
 if ($accion === 'obtenerProductos') {
     $productos = new Productos();
     $listaProductos = $productos->obtenerProductos();
     echo json_encode($listaProductos);
+    
 
 } elseif ($accion === 'agregarUsuario') {
     $usuario = $_POST['usuario'];
@@ -44,3 +44,4 @@ if ($accion === 'obtenerProductos') {
 }
 
 ?>
+
