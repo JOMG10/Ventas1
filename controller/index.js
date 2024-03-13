@@ -9,7 +9,7 @@ const paginacion = (pagina) => {
       case 1:
         if (pagina === 1) {
           contenido.innerHTML += `
-                  <iframe src="pagina1.html" frameborder="0" width="100%" height="600px"></iframe>    
+                  <iframe src="pagina1.html" frameborder="0" width="100%" height="80%"></iframe>    
                   `;
         }
         break;
@@ -33,7 +33,7 @@ const paginacion = (pagina) => {
       case 4:
         if (pagina === 4) {
           contenido.innerHTML += `
-                          <iframe src="productos.html" frameborder="0" width="100%" height="500px"></iframe>    
+                          <iframe src="productos.html" frameborder="0" width="100%" height="100%"></iframe>    
                           `;
         }
         break;

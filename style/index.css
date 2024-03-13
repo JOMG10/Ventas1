@@ -37,17 +37,9 @@ button {
     margin-left: 25%;
 }
 
-/* pagina1 */
-.title{
-    margin-top: 2px;
-    padding: 0;
-    background-color: aqua;
-}
 
-.search{
-    width: 50%;
-}
 
-.tabla-completo{
-    height: 80%;
+
+.contenido{
+    height: 680px;
 }

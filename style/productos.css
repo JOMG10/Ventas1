@@ -8,6 +8,10 @@
     padding-left: 50px;
 }
 
-.inputs{
-    width: 100px;
+.div-inputs{
+    width: 600px;
+}
+
+h4{
+    background-color: rgb(209, 159, 51);
 }

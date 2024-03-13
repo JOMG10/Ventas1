@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../style/productos.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-<h5 class="title">PRODUCTOS</h2>
+<h4 class="title">PRODUCTOS</h4>
 <!-- <form class="d-flex search" role="search">
     <span class="input-group-text">Codigo del producto:</span>
     <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search" id="inputBuscar">
@@ -19,7 +19,7 @@
   <button type="button" class="btn btn-primary btn-sm"  >Importar </button>
   <button type="button" class="btn btn-primary btn-sm"  >catalogo </button>
 
-  <h3>NUEVO PRODUCTO</h3>
+  <h5>NUEVO PRODUCTO</h5>
 
   <div class="card text-center">
     <div class="card-header">
@@ -32,15 +32,15 @@
     </div>
     <div class="card-body">
 
-        <div class="input-group mb-3 ">
+        <div class="input-group mb-3  " style="width: 50%;">
             <span class="input-group-text" id="basic-addon1">Codigo de barras</span>
-            <input type="text" class="inputs form-control " placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" >
+            <input type="text" class=" form-control "placeholder="Ingresa o busca un codigo de barras" aria-label="Username" aria-describedby="basic-addon1" >
         </div>
 
           
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" style="width: 50%;">
             <span class="input-group-text" id="basic-addon1">Descripcion</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" aria-describedby="basic-addon1">
         </div>
 
         <div class="checkbox">
@@ -48,7 +48,7 @@
             Se vende:
           </label>
   
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline" >
               <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
               <label class="form-check-label" for="inlineCheckbox1">Por unidad/pza</label>
             </div>
@@ -58,54 +58,74 @@
             </div>
   
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-              <label class="form-check-label" for="inlineCheckbox2">A granel (usa decimales)</label>
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
+              <label class="form-check-label" for="inlineCheckbox3">A granel (usa decimales)</label>
             </div>
-  
-
-
-        </div>
-
+                  </div>
         
-        
-       
-
-        
-        <div class="input-group mb-3">
-            <span class="input-group-text g-3" id="basic-addon1">Codigo de barras</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group mb-3" style="width: 20%;">
+            <span class="input-group-text g-3" id="basic-addon1">Precio costo:</span>
+            <input type="text" class="form-control" placeholder="$0.00" aria-label="Username" aria-describedby="basic-addon1">
           </div>
           
           
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Codigo de barras</span>
+        <div class="input-group mb-3" style="width: 20%;">
+            <span class="input-group-text" id="basic-addon1">Ganancia</span>
             <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            %
           </div>
 
          
           
           
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Codigo de barras</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group mb-3" style="width: 20%;">
+            <span class="input-group-text" id="basic-addon1">Precio de venta</span>
+            <input type="text" class="form-control" placeholder="$0.00" aria-label="Username" aria-describedby="basic-addon1">
           </div>
           
           
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Codigo de barras</span>
+        <div class="input-group mb-3" style="width: 20%;">
+            <span class="input-group-text" id="basic-addon1">Precio mayoreo</span>
+            <input type="text" class="form-control" placeholder="$0.00" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+
+
+
+          
+          
+        <div class="input-group mb-3" style="width: 50%;">
+            <span class="input-group-text" id="basic-addon1">Departamento</span>
             <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
           </div>
+
+          <div class="checkbox">
+
+            <div class="form-check form-check-inline" >
+              <input class="form-check-input" type="checkbox" id="checkbox-inventario" value="option2">
+              <label class="form-check-label" for="checkbox-inventario">Este producto si utiliza inventario</label>
+            </div>
+          </div>
+
+      
+
+
           
-          
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Codigo de barras</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group mb-3" style="width: 20%;">
+            <span class="input-group-text" id="basic-addon1">Hay
+              <input type="text" class="form-control" placeholder="0" aria-label="Username" aria-describedby="basic-addon1">
+
+               en este momento
+
+            </span>
           </div>
           
-          
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Codigo de barras</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          <div class="input-group mb-3" style="width: 20%;">
+            <span class="input-group-text" id="basic-addon1">Minimo</span>
+            <input type="text" class="form-control" placeholder="0" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3" style="width: 20%;">
+            <span class="input-group-text" id="basic-addon1">Maximo</span>
+            <input type="text" class="form-control" placeholder="0" aria-label="Username" aria-describedby="basic-addon1">
           </div>
           
           
