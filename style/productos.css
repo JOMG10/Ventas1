@@ -15,3 +15,21 @@
 h4{
     background-color: rgb(209, 159, 51);
 }
+
+ .card-body label , .card-body span {
+    font-size: 12px; 
+    margin-top: 3px;
+    font-weight: bold;
+  }
+
+  .card-body input{
+    font-size: 12px; 
+    margin-top: 3px;
+  }
+
+
+  .carta{
+    flex: 1;
+    overflow-y: auto; /* Añadir desplazamiento vertical si es necesario */
+    box-sizing: border-box;
+  }
