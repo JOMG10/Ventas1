@@ -8,7 +8,7 @@ const paginacion = (pagina) => {
     case 1:
       if (pagina === 1) {
         contenido.innerHTML += `
-          <iframe src="pagina1.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+          <iframe src="ventas.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
         `;
       }
       break;
@@ -16,7 +16,7 @@ const paginacion = (pagina) => {
     case 2:
       if (pagina === 2) {
         contenido.innerHTML += `
-          <iframe src="pagina2.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+          <iframe src="creditos.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
         `;
       }
       break;
@@ -24,7 +24,7 @@ const paginacion = (pagina) => {
     case 3:
       if (pagina === 3) {
         contenido.innerHTML += `
-          <iframe src="pagina3.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+          <iframe src="clientes.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
         `;
       }
       break;
@@ -40,7 +40,7 @@ const paginacion = (pagina) => {
     case 5:
       if (pagina === 5) {
         contenido.innerHTML += `
-          <iframe src="pagina5.html" frameborder="0" style="width: 100%; height: 90%;"></iframe>
+          <iframe src="inventario.html" frameborder="0" style="width: 100%; height: 90%;"></iframe>
         `;
       }
       break;
@@ -48,7 +48,7 @@ const paginacion = (pagina) => {
     case 6:
       if (pagina === 6) {
         contenido.innerHTML += `
-          <iframe src="pagina6.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+          <iframe src="compras.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
         `;
       }
       break;
