@@ -4,7 +4,7 @@ require_once '../conexion/conexion.php';
 class Productos extends Conexion {
 
     public function obtenerProductos() {
-        $sql = "SELECT * FROM producto";
+        $sql = "SELECT * FROM productos p INNER JOIN departamentos d ON p.idDep = d.idDep;";
         $result = $this->conexion->query($sql);
 
         $productos = array();

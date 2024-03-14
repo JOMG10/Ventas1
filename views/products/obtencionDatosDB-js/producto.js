@@ -21,7 +21,7 @@
     
             const codigo = element.codigo;
             const descripcion = element.descripcion;
-            const departamento = element.idDep;
+            const departamento = element.decripcion;
             const costo = element.costo;
             const pVenta = element.precioVenta;
             const pMayoreo = element.precioMayoreo;
