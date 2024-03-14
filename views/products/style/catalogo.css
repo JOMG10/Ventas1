@@ -1,33 +1,40 @@
 
   
-.tabla-contenedor {
-    width: 100%; /* Ajusta el ancho según sea necesario */
-    height: 70%; /* Ajusta la altura según sea necesario */
-    overflow: auto; /* Añade un scroll si la tabla es más grande que el contenedor */
-   
-}
 
-table {
-    width: 100%;
+.styled-table {
     border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd; 
+    font-size: 12px;
+    text-align: center;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd; /* Borde de las celdas */
+    padding: 8px;
+}
+
+.styled-table thead {
+    background-color: rgb(92, 176, 231); 
+}
+
+.columnaM{
+    width: 12%;
+}
+
+.columnaP{
+    width: 7%;
     
 }
 
-.tabla{
-    margin-top: 10px;
-    
+.justDerecho{
+    text-align: right;
 }
 
-th, td {
-    border:1px  solid #020202;
-    text-align: left;
-    font-size: 11px; 
-    text-align: left;
-
-
+.justificado{
+   text-align: center;
 }
 
-.columna{
-    background-color: rgb(230, 0, 0);
+.numeroLetra{
+    font-size: 12px;
 }
-
