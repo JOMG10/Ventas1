@@ -4,7 +4,7 @@ require_once '../conexion/conexion.php';
 class Productos extends Conexion {
 
     public function obtenerProductos() {
-        $sql = "SELECT * FROM productos";
+        $sql = "SELECT * FROM producto";
         $result = $this->conexion->query($sql);
 
         $productos = array();
