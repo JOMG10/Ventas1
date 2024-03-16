@@ -40,7 +40,7 @@
                 <td class="columnaP justDerecho numeroLetra">${existencia}</td>
                 <td class="columnaP justDerecho numeroLetra">${invMinimo}</td>
                 <td class="columnaP justDerecho numeroLetra">${invMaximo}</td>
-                <td class="columnaP justDerecho numeroLetra">${tipo}</td>
+                <td class="columnaP centrado numeroLetra">${tipo}</td>
             `;
     
             tbody.appendChild(nuevaFila);
