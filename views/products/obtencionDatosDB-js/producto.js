@@ -1,20 +1,34 @@
 
-    // Función para obtener usuarios
+    // funciones para obtener los datos de 
     function obtenerProductos() {
-        fetch('http://localhost/proyects/ventas1/instancias/instancias.php?accion=obtenerProductos')
+        fetch('http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductos')
         .then(response => response.json())
             .then(data => {
-                mostrarDatos(data)
+                mostrarProductos(data)
             })
             .catch(error => console.error('Error:', error));
     }
     obtenerProductos();
 
-    const mostrarDatos = (data) => {
+    const obtenerDepartamento =()=>{
+        fetch("http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerDepartamento")
+        .then(response => response.json())
+            .then(data =>{
+                mostrarDepartamento(data)
+            })
+    }
+    obtenerDepartamento();
+
+
+    //funciiones para agregar los datos a las interfaces
+
+    const tbody = document.querySelector('#tablaProductos tbody');
+    // const catalogoDepartamento = document.querySelector('#catalogoDepartamento ')
+
+
+    const mostrarProductos = (data) => {
         console.log(data);
-    
-        const tbody = document.querySelector('#tablaProductos tbody');
-        tbody.innerHTML = '';
+            tbody.innerHTML = '';
     
         data.forEach((element) => {
             const nuevaFila = document.createElement("tr");
@@ -48,32 +62,20 @@
     };
     
 
+    const mostrarDepartamento = (data) => {
+        const selectDepartamento = document.getElementById('catalogoDepartamento');
+    
+        // Limpiar opciones anteriores
+        selectDepartamento.innerHTML = '';
+    
+        // Crear una opción por cada departamento en los datos recibidos
+        data.forEach((departamento) => {
+            const option = document.createElement('option');
+            option.value = departamento.id; // Ajusta esto según la estructura de tus datos
+            option.textContent = departamento.nombre; // Ajusta esto según la estructura de tus datos
+            selectDepartamento.appendChild(option);
+        });
+    };
+    
 
-
-
-            //    const row = tbody.insertRow(i);
-            //    const cellCodigo = row.insertCell(0)
-            //    const cellDescripcion = row.insertCell(1);   
-            //    const cellDepartamento = row.insertCell(2)         
-            //    const cellCosto = row.insertCell(3);
-            //    const cellPVenta = row.insertCell(4);
-            //    const cellPMayoreo = row.insertCell(5);
-            //    const cellExistencia = row.insertCell(6);
-            //    const cellInvMinimo = row.insertCell(7);
-            //    const cellInvMaximo = row.insertCell(8);
-            //    const cellTipo = row.insertCell(9);
-              
-
-            //    cellCodigo.textContent = codigo;       
-            //    cellDescripcion.textContent = descripcion;
-            //    cellDepartamento.textContent = departamento
-            //    cellCosto.textContent = costo;       
-            //    cellPVenta.textContent = pVenta;               
-            //    cellPMayoreo.textContent = pMayoreo;
-            //    cellExistencia.textContent =  existencia;
-            //    cellInvMinimo.textContent = invMinimo;
-            //    cellInvMaximo.textContent = invMaximo;
-            //    cellTipo.textContent = tipo;
-
-               
            

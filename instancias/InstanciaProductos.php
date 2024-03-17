@@ -39,7 +39,14 @@ if ($accion === 'obtenerProductos') {
     $usuarios = new Usuarios();
     $resultado = $usuarios->borrarUsuario($idUsuario);
     echo json_encode($resultado);
-} else {
+} elseif($accion ==="obtenerDepartamento"){
+    $departamento = New Departamento();
+    $resultado = $departamento->obtenerDepartamento();
+    echo json_encode($resultado);
+
+    
+
+}else {
     echo json_encode(['msg' => 'Acción no válida']);
 }
 
