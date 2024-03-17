@@ -1,56 +1,59 @@
-<link rel="stylesheet" href="../style/catalogo.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="../style/catalogo.css" />
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+  crossorigin="anonymous"
+/>
 
 <div>
-    <h5>CATALOGO DE PRODUCTOS</h5>
+  <h5>CATALOGO DE PRODUCTOS</h5>
 </div>
 
-    <div class="input-group" style="width: 50%;">
-        <input type="text" class="form-control" placeholder="Ingresa o busca un codigo de barras" aria-label="Username" aria-describedby="basic-addon1"><i class="bi bi-search"></i>
-    </div>
+<div class="input-group" style="width: 50%">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Ingresa o busca un codigo de barras"
+    aria-label="Username"
+    aria-describedby="basic-addon1"
+  /><i class="bi bi-search"></i>
+</div>
 
-   
+<div class="table-container">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th scope="col" class="columnaM">Codigo</th>
+        <th scope="col">Descripcion del producto</th>
+        <th scope="col" class="columnaM">Departamento</th>
+        <th scope="col" class="columnaP">Costo</th>
+        <th scope="col" class="columnaP">P. Venta</th>
+        <th scope="col" class="columnaP">P. Mayoreo</th>
+        <th scope="col" class="columnaP">Existencia</th>
+        <th scope="col" class="columnaP">Inv. Minimo</th>
+        <th scope="col" class="columnaP">Inv. Maximo</th>
+        <th scope="col" class="columnaP">Tipo Venta</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
-        <div class="table-container" >
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th scope="col" class="columnaM">Codigo</th>
-                        <th scope="col">Descripcion del producto</th>
-                        <th scope="col" class="columnaM">Departamento</th>
-                        <th scope="col" class="columnaP">Costo</th>
-                        <th scope="col" class="columnaP">P. Venta</th>
-                        <th scope="col" class="columnaP">P. Mayoreo</th>
-                        <th scope="col" class="columnaP">Existencia</th>
-                        <th scope="col" class="columnaP">Inv. Minimo</th>
-                        <th scope="col" class="columnaP">Inv. Maximo</th>
-                        <th scope="col" class="columnaP">Tipo Venta</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí irán tus filas de la tabla -->
-                </tbody>
-            </table>
-        </div>
-  
-    
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="#">Producto</a>
+      </li>
+    </ul>
+  </div>
 
-
-<div class="tabla-contenedor" >
+  <div class="tabla-contenedor">
     <table class="table" id="tablaProductos">
-        
-        <tbody class="div-card" data-bs-spy="scroll">
-          
-        </tbody>
-      </table>
-
-
-    
-
+      <tbody class="div-card" data-bs-spy="scroll"></tbody>
+    </table>
+  </div>
 </div>
 
 <script src="../obtencionDatosDB-js/producto.js"></script>
-    
-
-    
-

@@ -1,6 +1,5 @@
 const contenedor= document.getElementById('contenedor');
-// const titulo = document.getElementById('titulo');
-
+const titulo = document.getElementById('titulo');
 
 const agregarMenu= (dato)=>{
   
@@ -10,11 +9,11 @@ const agregarMenu= (dato)=>{
     if(dato ==="nuevo"){
         contenedor.innerHTML +=`
         <iframe src="products/menu/nuevo.html" frameborder="0" width="100%" height="85%"></iframe>
-    `
+    `    
     }else if(dato==="modificar"){
         contenedor.innerHTML +=`
         <iframe src="products/menu/modificar.html" frameborder="0" width="100%" heiht="85%"></iframe>  `
-        titulo.textContent = "NUEVO PRODUCTO";
+       
     }else if(dato==="eliminar"){
         contenedor.innerHTML +=`
         <iframe src="products/menu/eliminar.html" frameborder="0" width="100%" heiht="85%"></iframe>  `
