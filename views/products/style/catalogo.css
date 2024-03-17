@@ -1,12 +1,10 @@
  
-
 .styled-table {
     border-collapse: collapse;
     width: 96%;
     border: 1px solid #ddd; 
     font-size: 12px;
     text-align: center;
-    /* margin-top: 5px; */
 }
 
 .styled-table th, .styled-table td {
@@ -56,3 +54,22 @@
     gap: 0px;
     height: 8vh; 
 }
+
+
+.search{
+
+    /* border: 2px  solid rgb(107, 166, 243); */
+    width: 80%;
+    /* border-radius: 1px;
+    height: 40px;
+    padding-left: 5px; */
+}
+
+/* 
+.search:focus {
+    background-color: #e6f3ff; /* Cambia el color de fondo cuando el input está seleccionado */
+    /* border: 2px  solid rgb(219, 26, 26); */
+
+/* } */ 
+
+
