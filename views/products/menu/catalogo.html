@@ -6,18 +6,54 @@
   crossorigin="anonymous"
 />
 
-<div>
-  <h5>CATALOGO DE PRODUCTOS</h5>
-</div>
+<!-- <div class="container">
+    <div class="top">
+        <div>
+            <h5>CATALOGO DE PRODUCTOS</h5>
+          </div>
+          <div class="input-group" style="width: 50%">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ingresa o busca un codigo de barras"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            /><i class="bi bi-search"></i>
+          </div>
+    </div>
+    <div class="bottom"> -->
 
-<div class="input-group" style="width: 50%">
-  <input
-    type="text"
-    class="form-control"
-    placeholder="Ingresa o busca un codigo de barras"
-    aria-label="Username"
-    aria-describedby="basic-addon1"
-  /><i class="bi bi-search"></i>
+<!-- <div class="tabla-contenedor">
+      <table class="table" id="tablaProductos">
+        <tbody class="div-card" ></tbody>
+      </table>
+    </div>
+   -->
+<!-- </div>
+</div> -->
+
+<h5>CATALOGO DE PRODUCTOS</h5>
+
+<div class="contenedorSearch">
+  <div>
+    <div class="input-group" style="width: 50%">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingresa o busca un codigo de barras"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      /><i class="bi bi-search"></i>
+    </div>
+  </div>
+
+  <div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end btn-agregar">
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+    </div>
+  </div>
 </div>
 
 <div class="table-container">
@@ -36,23 +72,16 @@
         <th scope="col" class="columnaP">Tipo Venta</th>
       </tr>
     </thead>
-    <tbody></tbody>
   </table>
 </div>
 
-<div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href="#">Producto</a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="tabla-contenedor">
-    <table class="table" id="tablaProductos">
-      <tbody class="div-card" data-bs-spy="scroll"></tbody>
-    </table>
+<div >
+  <div class="card-body" data-bs-spy="scroll">
+    <div>
+      <table class="table" id="tablaProductos">
+        <tbody></tbody>
+      </table>
+    </div>
   </div>
 </div>
 

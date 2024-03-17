@@ -33,7 +33,7 @@
             nuevaFila.innerHTML = `
                 <td class="columnaM justificado numeroLetra">${codigo}</td>
                 <td class="numeroLetra">${descripcion}</td>
-                <td class="columnaM numeroLetra">${departamento}</td>
+                <td class="columnaM numeroLetra justificado">${departamento}</td>
                 <td class="columnaP justDerecho numeroLetra">${costo}</td>
                 <td class="columnaP justDerecho numeroLetra">${pVenta}</td>
                 <td class="columnaP justDerecho numeroLetra">${pMayoreo}</td>

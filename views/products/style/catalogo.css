@@ -2,11 +2,11 @@
 
 .styled-table {
     border-collapse: collapse;
-    width: 100%;
+    width: 96%;
     border: 1px solid #ddd; 
     font-size: 12px;
     text-align: center;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .styled-table th, .styled-table td {
@@ -40,4 +40,19 @@
 }
 .centrado{
     text-align: center;
+}
+
+/* ----------------- */
+
+.card-body {
+    overflow-y: auto; 
+    max-height: 75vh; 
+    width: 97%;
+  }  
+
+.contenedorSearch {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 0px;
+    height: 8vh; 
 }
