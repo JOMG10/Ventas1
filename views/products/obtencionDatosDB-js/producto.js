@@ -8,22 +8,25 @@
             })
             .catch(error => console.error('Error:', error));
     }
-    obtenerProductos();
+   
 
     const obtenerDepartamento =()=>{
-        fetch("http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerDepartamento")
+        fetch("http://localhost/proyects/ventas1/instancias/instanciaDepartamento.php?accion=obtenerDepartamento")
         .then(response => response.json())
             .then(data =>{
-                mostrarDepartamento(data)
+                mostrarDepartamento(data);
+                // console.log("entrando al metodo d obtenerDeaprtamento: " + data)
             })
     }
+    obtenerProductos();
     obtenerDepartamento();
+
 
 
     //funciiones para agregar los datos a las interfaces
 
     const tbody = document.querySelector('#tablaProductos tbody');
-    // const catalogoDepartamento = document.querySelector('#catalogoDepartamento ')
+    const selectDepartamento = document.getElementById('catalogoDepartamento');
 
 
     const mostrarProductos = (data) => {
@@ -62,17 +65,12 @@
     };
     
 
-    const mostrarDepartamento = (data) => {
-        const selectDepartamento = document.getElementById('catalogoDepartamento');
-    
-        // Limpiar opciones anteriores
-        selectDepartamento.innerHTML = '';
-    
-        // Crear una opción por cada departamento en los datos recibidos
+    const mostrarDepartamento = (data) => {    
+        selectDepartamento.innerHTML = '';    
         data.forEach((departamento) => {
             const option = document.createElement('option');
-            option.value = departamento.id; // Ajusta esto según la estructura de tus datos
-            option.textContent = departamento.nombre; // Ajusta esto según la estructura de tus datos
+            // option.value = departamento.idDep; // Ajusta esto según la estructura de tus datos
+            option.textContent = departamento.decripcion; // Ajusta esto según la estructura de tus datos
             selectDepartamento.appendChild(option);
         });
     };

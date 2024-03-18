@@ -5,6 +5,7 @@ header("Access-Control-Allow-Headers: *");
 
 require_once '../conexion/Conexion.php';
 require_once '../clases/Productos.php';
+require_once '../clases/Departamento.php';
 
 $accion = isset($_GET['accion']) ? $_GET['accion'] : '';
 
@@ -39,8 +40,8 @@ if ($accion === 'obtenerProductos') {
     $usuarios = new Usuarios();
     $resultado = $usuarios->borrarUsuario($idUsuario);
     echo json_encode($resultado);
-} elseif($accion ==="obtenerDepartamento"){
-    $departamento = New Departamento();
+} elseif($accion ==='obtenerDepartamento'){
+    $departamento = new Departamento();
     $resultado = $departamento->obtenerDepartamento();
     echo json_encode($resultado);
 
