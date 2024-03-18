@@ -15,7 +15,6 @@
         .then(response => response.json())
             .then(data =>{
                 mostrarDepartamento(data);
-                // console.log("entrando al metodo d obtenerDeaprtamento: " + data)
             })
     }
     obtenerProductos();
@@ -29,13 +28,13 @@
     const selectDepartamento = document.getElementById('catalogoDepartamento');
 
 
+
     const mostrarProductos = (data) => {
-        console.log(data);
             tbody.innerHTML = '';
     
-        data.forEach((element) => {
+        data.forEach((element) => {    
             const nuevaFila = document.createElement("tr");
-    
+
             const codigo = element.codigo;
             const descripcion = element.descripcion;
             const departamento = element.decripcion;
@@ -66,11 +65,11 @@
     
 
     const mostrarDepartamento = (data) => {    
-        selectDepartamento.innerHTML = '';    
+        selectDepartamento.innerHTML = '';   
+
         data.forEach((departamento) => {
-            const option = document.createElement('option');
-            // option.value = departamento.idDep; // Ajusta esto según la estructura de tus datos
-            option.textContent = departamento.decripcion; // Ajusta esto según la estructura de tus datos
+            const option = document.createElement('option');          
+            option.textContent = departamento.decripcion; 
             selectDepartamento.appendChild(option);
         });
     };
