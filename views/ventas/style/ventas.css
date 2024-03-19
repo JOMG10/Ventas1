@@ -1,5 +1,5 @@
 .title{
-    background-color: rgb(129, 174, 233);
+    background-color: rgb(115, 164, 228);
     color: #ffffff;
     /* font-size: 15px; */
     padding: 4px;
@@ -7,19 +7,19 @@
 
 .styled-table {
     border-collapse: collapse;
-    width: 70%;
+    width: 100%;
     border: 1px solid #ddd; 
     font-size: 12px;
     text-align: center;
 }
 
 .styled-table th, .styled-table td {
-    border: 1px solid #ddd; /* Borde de las celdas */
+    border: 1px solid #c0bbbb; /* Borde de las celdas */
     padding: 8px;
 }
 
 .styled-table thead {
-    background-color: rgb(92, 176, 231); 
+    background-color: rgb(193, 223, 243); 
 }
 
 .columnaM{
@@ -27,12 +27,14 @@
 }
 
 .columnaP{
-    width: 10%;
+    width: 8%;
     
 }
 
 .just-izquierdo{
     text-align: left;
+    width: 25%;
+ 
 }
 
 .justDerecho{
@@ -80,5 +82,5 @@
 
 
 .contenidoCompra{
-    background-color: rgb(164, 168, 168);
+    background-color: rgb(222, 228, 228);
 }
