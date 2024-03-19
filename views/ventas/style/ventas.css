@@ -1,0 +1,84 @@
+.title{
+    background-color: rgb(129, 174, 233);
+    color: #ffffff;
+    /* font-size: 15px; */
+    padding: 4px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    width: 70%;
+    border: 1px solid #ddd; 
+    font-size: 12px;
+    text-align: center;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd; /* Borde de las celdas */
+    padding: 8px;
+}
+
+.styled-table thead {
+    background-color: rgb(92, 176, 231); 
+}
+
+.columnaM{
+    width: 12%;
+}
+
+.columnaP{
+    width: 10%;
+    
+}
+
+.just-izquierdo{
+    text-align: left;
+}
+
+.justDerecho{
+    text-align: right;
+}
+
+.justificado{
+   text-align: center;
+}
+
+.numeroLetra{
+    font-size: 12px;
+}
+.centrado{
+    text-align: center;
+}
+
+/* ----------------- */
+
+.card-body {
+    overflow-y: auto; 
+    max-height: 75vh; 
+    width: 97%;
+  }  
+
+.contenedorSearch {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 0px;
+    height: 8vh; 
+}
+
+.search{
+    width: 80%;
+}
+
+
+.table-container{
+    margin-left: 2px;
+}
+
+.btn-submenu{
+    margin-bottom: 5px;
+}
+
+
+.contenidoCompra{
+    background-color: rgb(164, 168, 168);
+}
