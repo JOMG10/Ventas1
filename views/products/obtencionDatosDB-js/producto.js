@@ -7,8 +7,7 @@
                 mostrarProductos(data)
             })
             .catch(error => console.error('Error:', error));
-    }
-   
+    }  
 
     const obtenerDepartamento =()=>{
         fetch("http://localhost/proyects/ventas1/instancias/instanciaDepartamento.php?accion=obtenerDepartamento")
