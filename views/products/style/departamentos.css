@@ -2,10 +2,10 @@
 
 .contenedor{
     border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #ddd; 
+    width: 96%;
+    border: 1px solid #c02121; 
     font-size: 12px;
-    text-align: center;
+    /* text-align: center; */
     margin-top: 5px;
     height: 100%;
 
@@ -16,7 +16,7 @@
 
 .container {
     display: flex;
-    height: 100vh;
+    height:90vh;
 }
 .left-side {
     flex: 1;
@@ -32,3 +32,4 @@ input[type="text"], button {
     display: block;
     margin-bottom: 10px;
 }
+

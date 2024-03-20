@@ -19,7 +19,8 @@ const agregarMenu= (dato)=>{
         <iframe src="products/menu/eliminar.html" frameborder="0" width="100%" heiht="85%"></iframe>  `
     }else if(dato==="departamentos"){
         contenedor.innerHTML +=`
-        <iframe src="products/menu/departamentos.html" frameborder="0" width="100%" heiht="85%"></iframe>  `
+        <iframe src="products/menu/departamentos.html" frameborder="0" width="100%" height="85%"></iframe>
+        ` 
     }else if(dato==="ventasPeriodo"){
         contenedor.innerHTML +=`
         <iframe src="products/menu/ventasPeriodo.html" frameborder="0" width="100%" heiht="85%"></iframe>  `
