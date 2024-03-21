@@ -64,7 +64,20 @@
     
 
     const mostrarDepartamento = (data) => {    
+
         selectDepartamento.innerHTML = '';   
+
+       
+        
+        const option = document.createElement('option');          
+        option.textContent = "Todos"; 
+        selectDepartamento.appendChild(option);
+
+
+        const option2 = document.createElement('option');          
+        option2.textContent = "--Sin Departamento--"; 
+        selectDepartamento.appendChild(option2);
+
 
         data.forEach((departamento) => {
             const option = document.createElement('option');          
@@ -74,4 +87,33 @@
     };
     
 
-           
+    // const mostrarDepartamento = (data) => {
+    //     const selectDepartamento = document.getElementById('catalogoDepartamento');
+      
+    //     // Guarda las opciones predeterminadas
+    //     const opcionTodos = selectDepartamento.querySelector('option[value="Todos"]');
+    //     const opcionSinDepartamento = selectDepartamento.querySelector('option[value="1"]');
+      
+    //     // Limpia el select
+    //     selectDepartamento.innerHTML = '';
+      
+    //     // Agrega las opciones predeterminadas nuevamente
+    //     selectDepartamento.appendChild(opcionTodos);
+    //     selectDepartamento.appendChild(opcionSinDepartamento);
+      
+    //     // Agrega las opciones adicionales provenientes de tu base de datos
+    //     data.forEach((departamento) => {
+    //       const option = document.createElement('option');
+    //       option.textContent = departamento.descripcion;
+    //       selectDepartamento.appendChild(option);
+    //     });
+    //   };
+      
+    //   // Ejemplo de llamada a la función mostrarDepartamento
+    //   const data = [
+    //     { descripcion: "Departamento 1" },
+    //     { descripcion: "Departamento 2" },
+    //     // Aquí deberías tener los datos provenientes de tu base de datos
+    //   ];
+    //   mostrarDepartamento(data);
+      
