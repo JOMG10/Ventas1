@@ -65,12 +65,17 @@
     grid-template-columns: 1fr 1fr; 
     gap: 0px;
     height: 8vh; 
+    /* width: 100%; */
 }
 
 .search{
-    width: 80%;
+    width: 100%;
 }
 
+
+.btn-agregarProducto{
+    margin-left: 7px;
+}
 
 .table-container{
     margin-left: 2px;
