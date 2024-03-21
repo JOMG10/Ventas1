@@ -1,51 +1,50 @@
+// funciones para obtener los datos de
+function obtenerProductos() {
+  fetch(
+    "http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductos"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      mostrarProductos(data);
+    })
+    .catch((error) => console.error("Error:", error));
+}
 
-    // funciones para obtener los datos de 
-    function obtenerProductos() {
-        fetch('http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductos')
-        .then(response => response.json())
-            .then(data => {
-                mostrarProductos(data)
-            })
-            .catch(error => console.error('Error:', error));
-    }  
+const obtenerDepartamento = () => {
+  fetch(
+    "http://localhost/proyects/ventas1/instancias/instanciaDepartamento.php?accion=obtenerDepartamento"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      mostrarDepartamento(data);
+    });
+};
+obtenerProductos();
+obtenerDepartamento();
 
-    const obtenerDepartamento =()=>{
-        fetch("http://localhost/proyects/ventas1/instancias/instanciaDepartamento.php?accion=obtenerDepartamento")
-        .then(response => response.json())
-            .then(data =>{
-                mostrarDepartamento(data);
-            })
-    }
-    obtenerProductos();
-    obtenerDepartamento();
+//funciiones para agregar los datos a las interfaces
 
+const tbody = document.querySelector("#tablaProductos tbody");
+const selectDepartamento = document.getElementById("catalogoDepartamento");
 
+const mostrarProductos = (data) => {
+  tbody.innerHTML = "";
 
-    //funciiones para agregar los datos a las interfaces
+  data.forEach((element) => {
+    const nuevaFila = document.createElement("tr");
 
-    const tbody = document.querySelector('#tablaProductos tbody');
-    const selectDepartamento = document.getElementById('catalogoDepartamento');
+    const codigo = element.codigo;
+    const descripcion = element.descripcion;
+    const departamento = element.decripcion;
+    const costo = element.costo;
+    const pVenta = element.precioVenta;
+    const pMayoreo = element.precioMayoreo;
+    const existencia = element.existencia;
+    const invMinimo = element.invMinimo;
+    const invMaximo = element.invMaximo;
+    const tipo = element.tipoVenta;
 
-
-
-    const mostrarProductos = (data) => {
-            tbody.innerHTML = '';
-    
-        data.forEach((element) => {    
-            const nuevaFila = document.createElement("tr");
-
-            const codigo = element.codigo;
-            const descripcion = element.descripcion;
-            const departamento = element.decripcion;
-            const costo = element.costo;
-            const pVenta = element.precioVenta;
-            const pMayoreo = element.precioMayoreo;
-            const existencia = element.existencia;
-            const invMinimo = element.invMinimo;
-            const invMaximo = element.invMaximo;
-            const tipo = element.tipoVenta;
-    
-            nuevaFila.innerHTML = `
+    nuevaFila.innerHTML = `
                 <td class="columnaM justificado numeroLetra">${codigo}</td>
                 <td class="numeroLetra">${descripcion}</td>
                 <td class="columnaM numeroLetra justificado">${departamento}</td>
@@ -57,63 +56,25 @@
                 <td class="columnaP justDerecho numeroLetra">${invMaximo}</td>
                 <td class="columnaP centrado numeroLetra">${tipo}</td>
             `;
-    
-            tbody.appendChild(nuevaFila);
-        });
-    };
-    
 
-    const mostrarDepartamento = (data) => {    
+    tbody.appendChild(nuevaFila);
+  });
+};
 
-        selectDepartamento.innerHTML = '';   
+const mostrarDepartamento = (data) => {
+  selectDepartamento.innerHTML = "";
 
-       
-        
-        const option = document.createElement('option');          
-        option.textContent = "Todos"; 
-        selectDepartamento.appendChild(option);
+  const option = document.createElement("option");
+  option.textContent = "Todos";
+  selectDepartamento.appendChild(option);
 
+  const option2 = document.createElement("option");
+  option2.textContent = "--Sin Departamento--";
+  selectDepartamento.appendChild(option2);
 
-        const option2 = document.createElement('option');          
-        option2.textContent = "--Sin Departamento--"; 
-        selectDepartamento.appendChild(option2);
-
-
-        data.forEach((departamento) => {
-            const option = document.createElement('option');          
-            option.textContent = departamento.decripcion; 
-            selectDepartamento.appendChild(option);
-        });
-    };
-    
-
-    // const mostrarDepartamento = (data) => {
-    //     const selectDepartamento = document.getElementById('catalogoDepartamento');
-      
-    //     // Guarda las opciones predeterminadas
-    //     const opcionTodos = selectDepartamento.querySelector('option[value="Todos"]');
-    //     const opcionSinDepartamento = selectDepartamento.querySelector('option[value="1"]');
-      
-    //     // Limpia el select
-    //     selectDepartamento.innerHTML = '';
-      
-    //     // Agrega las opciones predeterminadas nuevamente
-    //     selectDepartamento.appendChild(opcionTodos);
-    //     selectDepartamento.appendChild(opcionSinDepartamento);
-      
-    //     // Agrega las opciones adicionales provenientes de tu base de datos
-    //     data.forEach((departamento) => {
-    //       const option = document.createElement('option');
-    //       option.textContent = departamento.descripcion;
-    //       selectDepartamento.appendChild(option);
-    //     });
-    //   };
-      
-    //   // Ejemplo de llamada a la función mostrarDepartamento
-    //   const data = [
-    //     { descripcion: "Departamento 1" },
-    //     { descripcion: "Departamento 2" },
-    //     // Aquí deberías tener los datos provenientes de tu base de datos
-    //   ];
-    //   mostrarDepartamento(data);
-      
+  data.forEach((departamento) => {
+    const option = document.createElement("option");
+    option.textContent = departamento.decripcion;
+    selectDepartamento.appendChild(option);
+  });
+};
