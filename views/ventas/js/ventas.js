@@ -38,37 +38,88 @@
     // }
 
 
-    let tabCount = 1;
+//     let tabCount = 1;
 
-// Función para agregar un nuevo tab
-function agregarTab() {
-  tabCount++; // Incrementar el contador
-  const tabsContainer = document.getElementById('tabs');
+// // Función para agregar un nuevo tab
+// function agregarTab() {
+//   tabCount++; // Incrementar el contador
+//   const tabsContainer = document.getElementById('tabs');
 
-  // Crear un nuevo tab
-  const newTab = document.createElement('div');
-  newTab.classList.add('tab');
-  newTab.innerHTML = `
-    <h2>Tab ${tabCount}</h2>
-    <p>Contenido del Tab ${tabCount}</p>
-  `;
+//   // Crear un nuevo tab
+//   const newTab = document.createElement('div');
+//   newTab.classList.add('tab');
+//   newTab.innerHTML = `
+//     <h2>Tab ${tabCount}</h2>
+//     <p>Contenido del Tab ${tabCount}</p>
+//   `;
 
-  // Agregar el nuevo tab al contenedor de tabs
-  tabsContainer.appendChild(newTab);
+//   // Agregar el nuevo tab al contenedor de tabs
+//   tabsContainer.appendChild(newTab);
 
-  // Mostrar el nuevo tab
-  mostrarTab(newTab);
-}
+//   // Mostrar el nuevo tab
+//   mostrarTab(newTab);
+// }
 
-// Función para mostrar un tab específico
-function mostrarTab(tab) {
-  // Ocultar todos los tabs
-  const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(tab => {
-    tab.classList.remove('active');
-  });
+// // Función para mostrar un tab específico
+// function mostrarTab(tab) {
+//   // Ocultar todos los tabs
+//   const tabs = document.querySelectorAll('.tab');
+//   tabs.forEach(tab => {
+//     tab.classList.remove('active');
+//   });
 
-  // Mostrar el tab específico
-  tab.classList.add('active');
-}
+//   // Mostrar el tab específico
+//   tab.classList.add('active');
+// }
     
+
+ // Contador para los tabs
+ let tabCount = 2;
+  
+ // Función para agregar un nuevo tab
+ function newTab() {
+   tabCount++; // Incrementar el contador
+   const tabsContainer = document.getElementById('tabs');
+ 
+   // Crear un nuevo tab
+   const newTab = document.createElement('div');
+   newTab.classList.add('tab', 'active');
+   newTab.innerHTML = `
+     <h2>Tab ${tabCount}</h2>
+     <p>Contenido del Tab ${tabCount}</p>
+   `;
+ 
+   // Agregar el nuevo tab al contenedor de tabs
+   tabsContainer.appendChild(newTab);
+ 
+   // Ocultar los demás tabs
+   const tabs = document.querySelectorAll('.tab');
+   tabs.forEach(tab => {
+     tab.classList.remove('active');
+   });
+ 
+   // Mostrar el nuevo tab
+   newTab.classList.add('active');
+ }
+
+ let nombre = ""
+
+
+
+ const agregarTab =()=>{
+  tabCount++;
+
+  const divTabs =  document.getElementById("nav-tab");
+
+  nombre = prompt();
+
+  console.log(nombre)
+
+  divTabs.innerHTML =""
+
+  divTabs.innerHTML += ` 
+  <button class="nav-link " id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+
+  `
+  
+ }
