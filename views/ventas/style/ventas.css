@@ -96,7 +96,7 @@
 }
 
 #nav-tabContent{
-    height: 180px;
+    height: 170px;
 }
 
 .div-agregarTabs{
@@ -163,4 +163,30 @@
     display: flex; /* Usar flexbox */
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
+}
+
+.div-ventaActual-col1{
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10%;   
+    margin-top: 5px; 
+    background-color: rgb(205, 224, 224);
+}
+
+.datosTotales{
+    text-align: center;
+    margin: 5px;
+    font-size: 10pt;
+    align-items: center;    
+}
+
+.devolucionesVenta{
+    width: 100%;
+}
+
+.reimprimirTicket{
+    width: 96%;
+}
+
+.borrar{
+    margin-top: 10px;
 }
