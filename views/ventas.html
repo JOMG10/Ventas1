@@ -45,15 +45,9 @@
 <nav class="contenidoCompra">
   <div class="nav nav-tabs " id="nav-tab" role="tablist">
     <button class="nav-link active " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Ticket</button>
-    <button class="nav-link " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+    <!-- <button class="nav-link " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button> -->
   </div>
 </nav>
-
-<!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="tab-1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Tab 1</a>
-  </li>
-</ul> -->
 
 <div class="tab-content " id="nav-tabContent">
   <div class="table-container">
@@ -66,9 +60,7 @@
           <th scope="col" class="columnaP">Cantidad</th>
           <th scope="col" class="columnaP">Importe</th>
           <th scope="col" class="columnaP">Existencia</th>
-          <th scope="col" ></th>
-
-  
+          <th scope="col" ></th>  
         </tr>
       </thead>
     </table>
@@ -76,58 +68,41 @@
     </div>
     <div class="card-body "  data-bs-spy="scroll">
 
-      <div class="tab-content" id="nav-tabContent">
+      <div class="tab-content" id="nav-tabContent" >
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
           <label for="">Este es el titulo numero uno </label>
         </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-          <label for="">Este es el titulo numero dos </label>
-        </div>
       </div>
-
-
       <!-- div del card-body -->
     </div>
 
-    <button type="button" class="btn btn-primary mt-3"  onclick="agregarTab()">Agregar Tab</button>
+    <div class="div-agregarTabs">
 
- 
+      <div class="botones-ventaActual">
+        <div>
+          <button type="button" class="btn btn-primary mt-3"  >F5- Cambiar</button>
+          <button type="button" class="btn btn-primary mt-3"  onclick="agregarTab()">F6-Pendiente</button>
+          <button type="button" class="btn btn-primary mt-3"  >Eliminar</button>
+           <button type="button" class="btn btn-primary mt-3" >Asignar cliente</button>
+        </div>
+
+        <div class="div-btn-cobrar">
+          <button type="button" class="btn btn-primary btn-cobrar" >F12- Cobrar</button>
+        </div>
+    
+
+      </div>
+
+      <div class="totalCompra">
+        <label for="">$50</label>
+
+      </div>
+
+    </div>
+    
 
   <!-- div de contener completo -->
 </div>
-
-<!-- <div class="card text-center ">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href="#" >Ticket 1</a>
-      </li>
-      
-    </ul>
-  </div>
-  <div>
-    
-<div class="table-container">
-  <table class="styled-table">
-    <thead>
-      <tr>
-        <th scope="col" class="columnaM">Codigo</th>
-        <th scope="col" class="just-izquierdo">Descripcion del producto</th>
-        <th scope="col" class="columnaP">Precio Venta</th>
-        <th scope="col" class="columnaP">Cantidad</th>
-        <th scope="col" class="columnaP">Importe</th>
-        <th scope="col" class="columnaP">Existencia</th>
-
-      </tr>
-    </thead>
-  </table>
-</div>
-  </div>
-  <div class="card-body "  data-bs-spy="scroll">
-    
-  </div>
-</div> -->
-
 
 <div >
   <div class="card-body" data-bs-spy="scroll">

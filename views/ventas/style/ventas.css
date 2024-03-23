@@ -94,3 +94,46 @@
 .icono{
     background-color: black;
 }
+
+#nav-tabContent{
+    height: 200px;
+}
+
+.div-agregarTabs{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    
+}
+
+
+/* ---------------------botones de la venta actual parte inferior-------------------------- */
+
+.botones-ventaActual{
+    width: 100%;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 85% 15%;
+
+}
+
+.totalCompra {
+    width: 100%;
+    background-color: blue;
+    height: 70px;
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.btn-cobrar{
+    width: 180px;
+}
+
+.div-btn-cobrar{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: yellow;
+    justify-content: center;
+
+}
