@@ -110,7 +110,7 @@
 
 .botones-ventaActual{
     width: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: grid;
     grid-template-columns: 85% 15%;
 
@@ -118,7 +118,7 @@
 
 .totalCompra {
     width: 100%;
-    background-color: blue;
+    background-color: rgb(221, 221, 238);
     height: 70px;
     display: flex; /* Usar flexbox */
     justify-content: center; /* Centrar horizontalmente */
@@ -127,13 +127,31 @@
 
 .btn-cobrar{
     width: 180px;
+    height:60px;
 }
 
 .div-btn-cobrar{
     display: flex;
     text-align: center;
     align-items: center;
-    background-color: yellow;
+    /* background-color: yellow; */
+    /* border-radius: 0%; */
+    justify-content: center;
+}
+
+
+.label-totalCompra{
+    font-size: 40pt;
+    color: blue;
+}
+
+
+.botonesInferiores{
+   display: flex;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    align-items: center;
     justify-content: center;
 
 }
