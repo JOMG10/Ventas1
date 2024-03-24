@@ -50,15 +50,18 @@ buscarProducto.addEventListener("click", ()=>{
     const codigo = element.codigo;
     const descripcion = element.descripcion;
     const pVenta = element.precioVenta;
-    const existencia = element.existencia;
+    const cantidad = 2
+    const existencia = element.existencia - cantidad;
+
+    const importe = pVenta*cantidad;
 
 
     nuevaFila.innerHTML = `
                 <td class="columnaP columnaCodigo justificado">${codigo}</td>
                 <td class="just-izquierdo">${descripcion}</td>
-                <td class="columnaP justDerecho">${pVenta}</td>
-                <td class="columnaP justificado">5</td>
-                <td class="columnaP justDerecho">$ 50.00</td>
+                <td class="columnaP justDerecho">$ ${pVenta}</td>
+                <td class="columnaP justificado"> ${cantidad}</td>
+                <td class="columnaP justDerecho">$ ${importe}</td>
                 <td class="columnaP justDerecho">${existencia}</td>
                 <td ></td>
 
