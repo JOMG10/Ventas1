@@ -1,5 +1,6 @@
 
 let tabCount = 1; 
+const buscarProducto = document.getElementById("btn-buscarProducto")
 
 const agregarTab = () => {
   tabCount++;
@@ -22,5 +23,37 @@ const agregarContenido = (nombre) => {
   `;
 }
 
+let datosObtenidos = ""
+
+function obtenerProductos() {
+  fetch(
+    "http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductos"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      datosObtenidos = data;
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+obtenerProductos();
+
+buscarProducto.addEventListener("click", ()=>{
+  const inputBuscarProducto = document.getElementById("input_buscarProducto").value;
+
+  datosObtenidos.forEach(element => {
+
+    if(inputBuscarProducto == element.codigo){
+      console.log(element)
+    }   
+    
+  });
 
 
+
+
+
+
+
+  
+})
