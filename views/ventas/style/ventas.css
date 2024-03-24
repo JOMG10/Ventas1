@@ -28,7 +28,6 @@
 
 .columnaP{
     width: 8%;
-    
 }
 
 .just-izquierdo{
@@ -56,9 +55,11 @@
 
 .card-body {
     overflow-y: auto; 
-    max-height: 75vh; 
-    width: 97%;
+    height: 300px;
+    width: 100%;
   }  
+
+
 
 .contenedorSearch {
     display: grid;
@@ -96,13 +97,18 @@
 }
 
 #nav-tabContent{
-    height: 170px;
+    /* background-color: black; */
+    height:50%;
 }
 
 .div-agregarTabs{
     display: grid;
     grid-template-columns: 85% 15%;
-    
+}
+
+#tablaProductos{
+    font-size: 10pt;
+    /* background-color: aquamarine; */
 }
 
 
@@ -189,4 +195,10 @@
 
 .borrar{
     margin-top: 10px;
+}
+
+/* ------------------------------------contenido del tbody----------------------- */
+
+.columnaCodigo{
+    margin-top: 0px;
 }
