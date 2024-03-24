@@ -40,6 +40,7 @@ obtenerProductos();
 
 buscarProducto.addEventListener("click", ()=>{
   const inputBuscarProducto = document.getElementById("input_buscarProducto").value;
+  const tbody = document.querySelector("#tablaProductos tbody");
 
   datosObtenidos.forEach(element => {
 
