@@ -38,6 +38,9 @@ function obtenerProductos() {
 
 obtenerProductos();
 
+let totalPrecioVenta = 0;
+
+
 buscarProducto.addEventListener("click", ()=>{
   const inputBuscarProducto = document.getElementById("input_buscarProducto").value;
   const tbody = document.querySelector("#tablaProductos tbody");
@@ -50,7 +53,7 @@ buscarProducto.addEventListener("click", ()=>{
     const codigo = element.codigo;
     const descripcion = element.descripcion;
     const pVenta = element.precioVenta;
-    const cantidad = 2
+    const cantidad = 1
     const existencia = element.existencia - cantidad;
 
     const importe = pVenta*cantidad;
@@ -68,15 +71,19 @@ buscarProducto.addEventListener("click", ()=>{
             `;
 
     tbody.appendChild(nuevaFila);
+
+    sumarCantidad(pVenta);
     }   
     
-  });
-
-
-
-
-
-
-
-  
+  });  
 })
+
+const totalVenta = document.getElementById("")
+
+const sumarCantidad = (precio) =>{
+  const precioVenta = parseFloat(precio);
+   totalPrecioVenta += precioVenta;
+
+
+  console.log(totalPrecioVenta)
+}
