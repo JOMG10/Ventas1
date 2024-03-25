@@ -78,7 +78,7 @@ buscarProducto.addEventListener("click", ()=>{
   });  
 })
 
-const totalVenta = document.getElementById("")
+const totalVenta = document.getElementById("totalVenta");
 
 const sumarCantidad = (precio) =>{
   const precioVenta = parseFloat(precio);
