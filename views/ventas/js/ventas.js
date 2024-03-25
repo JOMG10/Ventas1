@@ -84,6 +84,5 @@ const sumarCantidad = (precio) =>{
   const precioVenta = parseFloat(precio);
    totalPrecioVenta += precioVenta;
 
-
-  console.log(totalPrecioVenta)
+   totalVenta.textContent = totalPrecioVenta;
 }
