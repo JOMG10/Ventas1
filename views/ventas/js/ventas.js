@@ -52,11 +52,11 @@ buscarProducto.addEventListener("click", ()=>{
 
     const codigo = element.codigo;
     const descripcion = element.descripcion;
-    const pVenta = element.precioVenta;
+    const pVenta = parseFloat(element.precioVenta).toFixed(2); // Formatear el precio de venta a 2 decimales
     const cantidad = 1
     const existencia = element.existencia - cantidad;
 
-    const importe = pVenta*cantidad;
+    const importe = (pVenta * cantidad).toFixed(2);
 
 
     nuevaFila.innerHTML = `
@@ -84,5 +84,8 @@ const sumarCantidad = (precio) =>{
   const precioVenta = parseFloat(precio);
    totalPrecioVenta += precioVenta;
 
-   totalVenta.textContent = totalPrecioVenta;
+   totalVenta.textContent =  totalPrecioVenta.toFixed(2);
+
+
+  console.log(totalPrecioVenta)
 }
