@@ -14,14 +14,40 @@ const agregarTab = () => {
   agregarContenido(nombre);
 }
 
+let contadorTabla = 1
+
 const agregarContenido = (nombre) => {
+  contadorTabla++
   const divContend = document.getElementById("nav-tabContent");
+
+  divContend.innerHTML =""
+
+  console.log(divContend)
+
+  
   divContend.innerHTML += `
     <div class="tab-pane fade" id="${nombre}" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <label for="">Este es el contenido del nuevo tab: ${nombre}</label>
+    <div>
+    <div class="card-body" data-bs-spy="scroll">
+      <div>
+        <table class="table" id="tabla-${contadorTabla}">
+          <tbody ></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
     </div>
   `;
 }
+
+// const agregarContenido = (nombre) => {
+//   const divContend = document.getElementById("nav-tabContent");
+//   divContend.innerHTML += `
+//     <div class="tab-pane fade" id="${nombre}" role="tabpanel" aria-labelledby="nav-profile-tab">
+//       <label for="">Este es el contenido del nuevo tab: ${nombre}</label>
+//     </div>
+//   `;
+// }
 
 let datosObtenidos = ""
 
@@ -45,7 +71,7 @@ const inputBuscarProducto = document.getElementById("input_buscarProducto");
 
 
 buscarProducto.addEventListener("click", ()=>{
-  const tbody = document.querySelector("#tablaProductos tbody");
+  const tbody = document.querySelector("#tabla-2 tbody");
   const inputValor = inputBuscarProducto.value
 
   datosObtenidos.forEach(element => {
