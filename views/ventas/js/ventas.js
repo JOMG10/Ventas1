@@ -1,6 +1,11 @@
 
 let tabCount = 1; 
-const buscarProducto = document.getElementById("btn-buscarProducto")
+let contadorTabla = 1
+let datosObtenidos = []
+let totalPrecioVenta = 0;
+const inputBuscarProducto = document.getElementById("input_buscarProducto");
+const buscarProducto = document.getElementById("btn-buscarProducto");
+const totalVenta = document.getElementById("totalVenta");
 
 const agregarTab = () => {
   tabCount++;
@@ -8,19 +13,19 @@ const agregarTab = () => {
   
   const divTabs = document.getElementById("nav-tab");
   divTabs.innerHTML += `
-    <button class="nav-link" id="tab${tabCount}" data-bs-toggle="tab" data-bs-target="#${nombre}" type="button" role="tab" aria-controls="${nombre}" aria-selected="false">${nombre}</button>
+    <button class="nav-link" id="tab${tabCount}"  onclick="cambiarTicket('ticket-2')" data-bs-toggle="tab" data-bs-target="#${nombre}" 
+    type="button" role="tab" aria-controls="${nombre}" aria-selected="false">${nombre}</button>
   `;
 
   agregarContenido(nombre);
 }
 
-let contadorTabla = 1
 
 const agregarContenido = (nombre) => {
   contadorTabla++
   const divContend = document.getElementById("nav-tabContent");
 
-  divContend.innerHTML =""
+  // divContend.innerHTML =""
 
   console.log(divContend)
 
@@ -30,7 +35,7 @@ const agregarContenido = (nombre) => {
     <div>
     <div class="card-body" data-bs-spy="scroll">
       <div>
-        <table class="table" id="tabla-${contadorTabla}">
+        <table class="table" id="ticket-${contadorTabla}">
           <tbody ></tbody>
         </table>
       </div>
@@ -39,17 +44,6 @@ const agregarContenido = (nombre) => {
     </div>
   `;
 }
-
-// const agregarContenido = (nombre) => {
-//   const divContend = document.getElementById("nav-tabContent");
-//   divContend.innerHTML += `
-//     <div class="tab-pane fade" id="${nombre}" role="tabpanel" aria-labelledby="nav-profile-tab">
-//       <label for="">Este es el contenido del nuevo tab: ${nombre}</label>
-//     </div>
-//   `;
-// }
-
-let datosObtenidos = ""
 
 function obtenerProductos() {
   fetch(
@@ -64,14 +58,30 @@ function obtenerProductos() {
 
 obtenerProductos();
 
-let totalPrecioVenta = 0;
+let numeroTicket ="";
+// let tbody = "";
 
-const inputBuscarProducto = document.getElementById("input_buscarProducto");
+const cambiarTicket =(ticket)=>{
 
+  numeroTicket = ticket
+  console.log(numeroTicket)
+  // return numeroTicket;
+  // const tbody = document.querySelector(`#ticket tbody`);
+  // const inputValor = inputBuscarProducto.value
+ 
 
+}
+
+cambiarTicket("tablaProductos");
 
 buscarProducto.addEventListener("click", ()=>{
-  const tbody = document.querySelector("#tabla-2 tbody");
+  console.log(numeroTicket)
+
+
+
+  const tbody = document.querySelector(`#${numeroTicket} tbody`);
+
+  console.log(tbody)
   const inputValor = inputBuscarProducto.value
 
   datosObtenidos.forEach(element => {
@@ -116,8 +126,6 @@ const limpiarInput = ()=>{
   inputBuscarProducto.value = ""
 
 }
-
-const totalVenta = document.getElementById("totalVenta");
 
 const sumarCantidad = (precio) =>{
   const precioVenta = parseFloat(precio);
