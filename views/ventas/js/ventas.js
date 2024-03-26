@@ -40,14 +40,17 @@ obtenerProductos();
 
 let totalPrecioVenta = 0;
 
+const inputBuscarProducto = document.getElementById("input_buscarProducto");
+
+
 
 buscarProducto.addEventListener("click", ()=>{
-  const inputBuscarProducto = document.getElementById("input_buscarProducto").value;
   const tbody = document.querySelector("#tablaProductos tbody");
+  const inputValor = inputBuscarProducto.value
 
   datosObtenidos.forEach(element => {
 
-    if(inputBuscarProducto == element.codigo){
+    if(inputValor == element.codigo){
       const nuevaFila = document.createElement("tr");
 
     const codigo = element.codigo;
@@ -73,10 +76,20 @@ buscarProducto.addEventListener("click", ()=>{
     tbody.appendChild(nuevaFila);
 
     sumarCantidad(pVenta);
+
+    limpiarInput();
+
+
     }   
     
   });  
 })
+
+
+const limpiarInput = ()=>{
+  inputBuscarProducto.value = ""
+
+}
 
 const totalVenta = document.getElementById("totalVenta");
 
