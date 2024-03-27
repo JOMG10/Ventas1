@@ -3,6 +3,7 @@ let tabCount = 1;
 let contadorTabla = 1
 let datosObtenidos = []
 let totalPrecioVenta = 0;
+let numeroTicket ="";
 const inputBuscarProducto = document.getElementById("input_buscarProducto");
 const buscarProducto = document.getElementById("btn-buscarProducto");
 const totalVenta = document.getElementById("totalVenta");
@@ -24,7 +25,7 @@ const agregarTab = () => {
   
   const divTabs = document.getElementById("nav-tab");
   divTabs.innerHTML += `
-    <button class="nav-link" id="tab${tabCount}"  onclick="cambiarTicket('ticket-2')" data-bs-toggle="tab" data-bs-target="#${nombre}" 
+    <button class="nav-link" id="tab${tabCount}"  onclick="cambiarTicket('${nombre}')" data-bs-toggle="tab" data-bs-target="#${nombre}" 
     type="button" role="tab" aria-controls="${nombre}" aria-selected="false">${nombre}</button>
   `;
 
@@ -50,12 +51,7 @@ const agregarContenido = (nombre) => {
   `;
 }
 
-
-
 obtenerProductos();
-
-let numeroTicket ="";
-// let tbody = "";
 
 const cambiarTicket =(ticket)=>{
   numeroTicket = ticket;
