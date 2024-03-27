@@ -7,6 +7,17 @@ const inputBuscarProducto = document.getElementById("input_buscarProducto");
 const buscarProducto = document.getElementById("btn-buscarProducto");
 const totalVenta = document.getElementById("totalVenta");
 
+function obtenerProductos() {
+  fetch(
+    "http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductos"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      datosObtenidos = data;
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
 const agregarTab = () => {
   tabCount++;
   let nombre = prompt("Ingrese el nombre del nuevo tab:");
@@ -23,13 +34,7 @@ const agregarTab = () => {
 
 const agregarContenido = (nombre) => {
   contadorTabla++
-  const divContend = document.getElementById("nav-tabContent");
-
-  // divContend.innerHTML =""
-
-  console.log(divContend)
-
-  
+  const divContend = document.getElementById("nav-tabContent");  
   divContend.innerHTML += `
     <div class="tab-pane fade" id="${nombre}" role="tabpanel" aria-labelledby="nav-profile-tab">
     <div>
@@ -45,16 +50,7 @@ const agregarContenido = (nombre) => {
   `;
 }
 
-function obtenerProductos() {
-  fetch(
-    "http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductos"
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      datosObtenidos = data;
-    })
-    .catch((error) => console.error("Error:", error));
-}
+
 
 obtenerProductos();
 
@@ -62,26 +58,17 @@ let numeroTicket ="";
 // let tbody = "";
 
 const cambiarTicket =(ticket)=>{
-
-  numeroTicket = ticket
-  console.log(numeroTicket)
-  // return numeroTicket;
-  // const tbody = document.querySelector(`#ticket tbody`);
-  // const inputValor = inputBuscarProducto.value
- 
-
+  numeroTicket = ticket;
+  // calcularTotal();
 }
 
 cambiarTicket("tablaProductos");
 
-buscarProducto.addEventListener("click", ()=>{
-  console.log(numeroTicket)
-
-
+buscarProducto.addEventListener("click", (e)=>{
+  e.preventDefault();
 
   const tbody = document.querySelector(`#${numeroTicket} tbody`);
 
-  console.log(tbody)
   const inputValor = inputBuscarProducto.value
 
   datosObtenidos.forEach(element => {
@@ -111,7 +98,8 @@ buscarProducto.addEventListener("click", ()=>{
 
     tbody.appendChild(nuevaFila);
 
-    sumarCantidad(pVenta);
+    // sumarCantidad(pVenta);
+    calcularTotal(numeroTicket);
 
     limpiarInput();
 
@@ -120,19 +108,28 @@ buscarProducto.addEventListener("click", ()=>{
     
   });  
 })
+// Actualizar calcularTotal para procesar solo la fila recién agregada
+const calcularTotal = (numeroTicket) => {
+  const tbody = document.querySelector(`#${numeroTicket} tbody`);
+  const ultimaFilaAgregada = tbody.lastElementChild; // Obtener la última fila agregada
 
-
+  if (ultimaFilaAgregada) {
+    const celdas = ultimaFilaAgregada.querySelectorAll('td');
+    const importeCompra = celdas[4];
+    const totalImporte = importeCompra.textContent
+    console.log(totalImporte);
+    sumarCantidad(totalImporte);
+  }
+};
 const limpiarInput = ()=>{
   inputBuscarProducto.value = ""
 
 }
 
 const sumarCantidad = (precio) =>{
+  console.log(precio)
   const precioVenta = parseFloat(precio);
    totalPrecioVenta += precioVenta;
 
    totalVenta.textContent =  totalPrecioVenta.toFixed(2);
-
-
-  console.log(totalPrecioVenta)
 }
