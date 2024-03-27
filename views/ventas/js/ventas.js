@@ -90,7 +90,7 @@ buscarProducto.addEventListener("click", (e)=>{
                 <td class="just-izquierdo">${descripcion}</td>
                 <td class="columnaP justDerecho">$ ${pVenta}</td>
                 <td class="columnaP justificado"> ${cantidad}</td>
-                <td class="columnaP justDerecho">$ ${importe}</td>
+                <td class="columnaP justDerecho">${importe}</td>
                 <td class="columnaP justDerecho">${existencia}</td>
                 <td ></td>
 
@@ -130,6 +130,9 @@ const sumarCantidad = (precio) =>{
   console.log(precio)
   const precioVenta = parseFloat(precio);
    totalPrecioVenta += precioVenta;
+
+  //  totalVenta.textContent =  precio;
+
 
    totalVenta.textContent =  totalPrecioVenta.toFixed(2);
 }
