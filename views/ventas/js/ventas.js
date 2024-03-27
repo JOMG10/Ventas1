@@ -89,8 +89,8 @@ buscarProducto.addEventListener("click", (e)=>{
                 <td class="columnaP columnaCodigo justificado">${codigo}</td>
                 <td class="just-izquierdo">${descripcion}</td>
                 <td class="columnaP justDerecho">$ ${pVenta}</td>
-                <td class="columnaP justificado"> ${cantidad}</td>
-                <td class="columnaP justDerecho">${importe}</td>
+                <td class="columnaP justificado">${cantidad}</td>
+                <td class="columnaP justDerecho"> ${importe}</td>
                 <td class="columnaP justDerecho">${existencia}</td>
                 <td ></td>
 
@@ -129,7 +129,7 @@ const limpiarInput = ()=>{
 const sumarCantidad = (precio) =>{
   console.log(precio)
   const precioVenta = parseFloat(precio);
-   totalPrecioVenta += precioVenta;
+  totalPrecioVenta += precioVenta;
 
   //  totalVenta.textContent =  precio;
 
