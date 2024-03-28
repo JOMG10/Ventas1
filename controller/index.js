@@ -62,3 +62,6 @@ const paginacion = (pagina) => {
       break;
   }
 };
+
+
+paginacion(1);
