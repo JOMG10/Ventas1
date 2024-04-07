@@ -1,7 +1,8 @@
 
 let tabCount = 1; 
 let contadorTabla = 1
-let datosObtenidos = []
+let datosObtenidos = [];
+let datoObtenidoId = "";
 let totalPrecioVenta = 0;
 let numeroTicket ="";
 const inputBuscarProducto = document.getElementById("input_buscarProducto");
@@ -19,7 +20,18 @@ function obtenerProductos() {
     .catch((error) => console.error("Error:", error));
 }
 
-const agregarTab = () => {
+const obtener =() =>{
+  fetch(
+    "http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductoId"
+  )
+  .then((response) => response.json())
+  .then((data) =>{
+    datoObtenidoId = data;
+  })
+  .catch((error) => console.log("Error:", error));
+}
+
+ const agregarTab = () => {
   tabCount++;
   let nombre = prompt("Ingrese el nombre del nuevo tab:");
   
