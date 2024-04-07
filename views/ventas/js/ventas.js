@@ -66,11 +66,12 @@ buscarProducto.addEventListener("click", (e)=>{
   const tbody = document.querySelector(`#${numeroTicket} tbody`);
 
   const inputValor = inputBuscarProducto.value
+  let valor= "";
 
   datosObtenidos.forEach(element => {
 
     if(inputValor == element.codigo){
-      const nuevaFila = document.createElement("tr");
+    const nuevaFila = document.createElement("tr");
 
     const codigo = element.codigo;
     const descripcion = element.descripcion;
@@ -100,9 +101,17 @@ buscarProducto.addEventListener("click", (e)=>{
     limpiarInput();
 
 
+    }else{
+      valor = false;
+      console.log("el valor no existe"); 
     }   
     
-  });  
+  }); 
+  
+  if(valor = false){
+    console.log("el valor no existe");
+
+  }
 })
 // Actualizar calcularTotal para procesar solo la fila recién agregada
 const calcularTotal = (numeroTicket) => {
