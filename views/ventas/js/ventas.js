@@ -20,7 +20,7 @@ function obtenerProductos() {
     .catch((error) => console.error("Error:", error));
 }
 
-const obtener =() =>{
+const obtener = () =>{
   fetch(
     "http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductoId"
   )
