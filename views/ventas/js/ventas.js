@@ -21,8 +21,11 @@ function obtenerProductos() {
 }
 
 const obtener = () =>{
+  const productoId = inputBuscarProducto.value;
+  console.log(productoId);
+
   fetch(
-    "http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductoId"
+    `http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductoId&idProducto=${productoId}` 
   )
   .then((response) => response.json())
   .then((data) =>{
@@ -74,6 +77,8 @@ cambiarTicket("tablaProductos");
 
 buscarProducto.addEventListener("click", (e)=>{
   e.preventDefault();
+
+  obtener();
 
   const tbody = document.querySelector(`#${numeroTicket} tbody`);
 
