@@ -15,8 +15,8 @@ class Productos extends Conexion {
         return $productos;
     }
 
-    public function obtenerProductoID($id) {
-        $sql = "SELECT * FROM productos WHERE idProducto = $id"; // Debes concatenar el valor de $id en la consulta SQL
+    public function obtenerProductoID($codigo) {
+        $sql = "SELECT * FROM productos WHERE codigo = $codigo"; // Debes concatenar el valor de $id en la consulta SQL
         $result = $this->conexion->query($sql);
     
         // Verificar si la consulta fue exitosa

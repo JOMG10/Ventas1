@@ -41,9 +41,9 @@ if ($accion === 'obtenerProductos') {
     $resultado = $usuarios->borrarUsuario($idUsuario);
     echo json_encode($resultado);
 }elseif ($accion === 'obtenerProductoId') {
-    $idProducto = $_GET['idProducto']; // Cambiar 'idUsuario' por 'idProducto'
+    $codigo = $_GET['codigo'];
     $productos = new Productos();
-    $resultado = $productos->obtenerProductoID($idProducto); // Llamar a la función correspondiente
+    $resultado = $productos->obtenerProductoID($codigo); // Llamar a la función correspondiente
     echo json_encode($resultado);
 }
  else {

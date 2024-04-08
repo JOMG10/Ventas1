@@ -2,8 +2,9 @@
 let tabCount = 1; 
 let contadorTabla = 1
 let datosObtenidos = [];
-let datoObtenidoId = "";
+let datoObtenidoId = {};
 let totalPrecioVenta = 0;
+var codigoDatoObtenido;
 let numeroTicket ="";
 const inputBuscarProducto = document.getElementById("input_buscarProducto");
 const buscarProducto = document.getElementById("btn-buscarProducto");
@@ -20,19 +21,18 @@ function obtenerProductos() {
     .catch((error) => console.error("Error:", error));
 }
 
-const obtener = () =>{
-  const productoId = inputBuscarProducto.value;
-  console.log(productoId);
-
+const obtener = () => {
+  const codigoInput = inputBuscarProducto.value; // Usar una variable diferente para el valor del input
   fetch(
-    `http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductoId&idProducto=${productoId}` 
+      `http://localhost/proyects/ventas1/instancias/instanciaProductos.php?accion=obtenerProductoId&codigo=${codigoInput}`
   )
   .then((response) => response.json())
-  .then((data) =>{
-    datoObtenidoId = data;
+  .then((data) => {
+      mostrarDatos(data.codigo, data.descripcion, data.precioVenta, data.existencia);
   })
   .catch((error) => console.log("Error:", error));
 }
+
 
  const agregarTab = () => {
   tabCount++;
@@ -75,62 +75,128 @@ const cambiarTicket =(ticket)=>{
 
 cambiarTicket("tablaProductos");
 
-buscarProducto.addEventListener("click", (e)=>{
-  e.preventDefault();
+// buscarProducto.addEventListener("click", (e)=>{
+//   e.preventDefault();
 
-  obtener();
+//   obtener();
 
-  const tbody = document.querySelector(`#${numeroTicket} tbody`);
+//   const tbody = document.querySelector(`#${numeroTicket} tbody`);
 
-  const inputValor = inputBuscarProducto.value
-  let valor= "";
+//   const inputValor = inputBuscarProducto.value
+//   let valor= "";
 
-  datosObtenidos.forEach(element => {
+//   datosObtenidos.forEach(element => {
 
-    if(inputValor == element.codigo){
-    const nuevaFila = document.createElement("tr");
+//     if(inputValor == element.codigo){
+//     const nuevaFila = document.createElement("tr");
 
-    const codigo = element.codigo;
-    const descripcion = element.descripcion;
-    const pVenta = parseFloat(element.precioVenta).toFixed(2); // Formatear el precio de venta a 2 decimales
-    const cantidad = 1
-    const existencia = element.existencia - cantidad;
+//     const codigo = element.codigo;
+//     const descripcion = element.descripcion;
+//     const pVenta = parseFloat(element.precioVenta).toFixed(2); // Formatear el precio de venta a 2 decimales
+//     const cantidad = 1
+//     const existencia = element.existencia - cantidad;
 
-    const importe = (pVenta * cantidad).toFixed(2);
-
-
-    nuevaFila.innerHTML = `
-                <td class="columnaP columnaCodigo justificado">${codigo}</td>
-                <td class="just-izquierdo">${descripcion}</td>
-                <td class="columnaP justDerecho">$ ${pVenta}</td>
-                <td class="columnaP justificado">${cantidad}</td>
-                <td class="columnaP justDerecho"> ${importe}</td>
-                <td class="columnaP justDerecho">${existencia}</td>
-                <td ></td>
-
-            `;
-
-    tbody.appendChild(nuevaFila);
-
-    // sumarCantidad(pVenta);
-    calcularTotal(numeroTicket);
-
-    limpiarInput();
+//     const importe = (pVenta * cantidad).toFixed(2);
 
 
-    }else{
-      valor = false;
-      console.log("el valor no existe"); 
-    }   
+//     nuevaFila.innerHTML = `
+//                 <td class="columnaP columnaCodigo justificado">${codigo}</td>
+//                 <td class="just-izquierdo">${descripcion}</td>
+//                 <td class="columnaP justDerecho">$ ${pVenta}</td>
+//                 <td class="columnaP justificado">${cantidad}</td>
+//                 <td class="columnaP justDerecho"> ${importe}</td>
+//                 <td class="columnaP justDerecho">${existencia}</td>
+//                 <td ></td>
+
+//             `;
+
+//     tbody.appendChild(nuevaFila);
+
+//     // sumarCantidad(pVenta);
+//     calcularTotal(numeroTicket);
+
+//     limpiarInput();
+
+
+//     }else{
+//       valor = false;
+//       console.log("el valor no existe"); 
+//     }   
     
-  }); 
+//   }); 
   
-  if(valor = false){
-    console.log("el valor no existe");
+//   if(valor = false){
+//     console.log("el valor no existe");
 
-  }
-})
+//   }
+// })
 // Actualizar calcularTotal para procesar solo la fila recién agregada
+
+const mostrarDatos=(codigo, costo, descripcion, existencia)=> {
+  // e.preventDefault();
+  console.log(codigo, costo, descripcion, existencia);
+
+
+  // const tbody = document.querySelector(`#${numeroTicket} tbody`);
+
+  // let valor= "";
+
+  // datosObtenidos.forEach(element => {
+
+  //   if(inputValor == element.codigo){
+  //   const nuevaFila = document.createElement("tr");
+
+  //   const codigo = element.codigo;
+  //   const descripcion = element.descripcion;
+  //   const pVenta = parseFloat(element.precioVenta).toFixed(2); // Formatear el precio de venta a 2 decimales
+  //   const cantidad = 1
+  //   const existencia = element.existencia - cantidad;
+
+  //   const importe = (pVenta * cantidad).toFixed(2);
+
+
+  //   nuevaFila.innerHTML = `
+  //               <td class="columnaP columnaCodigo justificado">${codigo}</td>
+  //               <td class="just-izquierdo">${descripcion}</td>
+  //               <td class="columnaP justDerecho">$ ${pVenta}</td>
+  //               <td class="columnaP justificado">${cantidad}</td>
+  //               <td class="columnaP justDerecho"> ${importe}</td>
+  //               <td class="columnaP justDerecho">${existencia}</td>
+  //               <td ></td>
+
+  //           `;
+
+  //   tbody.appendChild(nuevaFila);
+
+  //   // sumarCantidad(pVenta);
+  //   calcularTotal(numeroTicket);
+
+  //   limpiarInput();
+
+
+  //   }else{
+  //     valor = false;
+  //     console.log("el valor no existe"); 
+  //   }   
+    
+  // }); 
+  
+  // if(valor = false){
+  //   console.log("el valor no existe");
+
+  // }
+}
+
+
+
+buscarProducto.addEventListener("click", (e) => {
+  e.preventDefault();
+  obtener(); 
+});
+
+
+
+
 const calcularTotal = (numeroTicket) => {
   const tbody = document.querySelector(`#${numeroTicket} tbody`);
   const ultimaFilaAgregada = tbody.lastElementChild; // Obtener la última fila agregada
