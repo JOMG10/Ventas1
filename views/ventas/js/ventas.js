@@ -28,7 +28,7 @@ const obtener = () => {
   )
   .then((response) => response.json())
   .then((data) => {
-      mostrarDatos(data.codigo, data.descripcion, data.precioVenta, data.existencia);
+      mostrarDatos(data.codigo, data.descripcion, data.precioVenta, data.existencia);    
   })
   .catch((error) => console.log("Error:", error));
 }
@@ -132,59 +132,37 @@ cambiarTicket("tablaProductos");
 // })
 // Actualizar calcularTotal para procesar solo la fila recién agregada
 
-const mostrarDatos=(codigo, costo, descripcion, existencia)=> {
-  // e.preventDefault();
-  console.log(codigo, costo, descripcion, existencia);
+const mostrarDatos=(codigo, descripcion,costo, existencia)=> {
+
+  const tbody = document.querySelector(`#${numeroTicket} tbody`);
+    const nuevaFila = document.createElement("tr");
 
 
-  // const tbody = document.querySelector(`#${numeroTicket} tbody`);
 
-  // let valor= "";
+    const cantidad = 3
+    const importe = (cantidad * costo).toFixed(2);
+    const nuevaExist = existencia - cantidad;
 
-  // datosObtenidos.forEach(element => {
+    nuevaFila.innerHTML = `
+                <td class="columnaP columnaCodigo justificado">${codigo}</td>
+                <td class="just-izquierdo">${descripcion}</td>
+                <td class="columnaP justDerecho">$ ${costo}</td>
+                <td class="columnaP justificado">${cantidad}</td>
+                <td class="columnaP justDerecho"> ${importe}</td>
+                <td class="columnaP justDerecho">${nuevaExist}</td>
+                <td ></td>
 
-  //   if(inputValor == element.codigo){
-  //   const nuevaFila = document.createElement("tr");
+            `;
 
-  //   const codigo = element.codigo;
-  //   const descripcion = element.descripcion;
-  //   const pVenta = parseFloat(element.precioVenta).toFixed(2); // Formatear el precio de venta a 2 decimales
-  //   const cantidad = 1
-  //   const existencia = element.existencia - cantidad;
+    tbody.appendChild(nuevaFila);
 
-  //   const importe = (pVenta * cantidad).toFixed(2);
+    // sumarCantidad(pVenta);
+    calcularTotal(numeroTicket);
 
+    limpiarInput();
 
-  //   nuevaFila.innerHTML = `
-  //               <td class="columnaP columnaCodigo justificado">${codigo}</td>
-  //               <td class="just-izquierdo">${descripcion}</td>
-  //               <td class="columnaP justDerecho">$ ${pVenta}</td>
-  //               <td class="columnaP justificado">${cantidad}</td>
-  //               <td class="columnaP justDerecho"> ${importe}</td>
-  //               <td class="columnaP justDerecho">${existencia}</td>
-  //               <td ></td>
-
-  //           `;
-
-  //   tbody.appendChild(nuevaFila);
-
-  //   // sumarCantidad(pVenta);
-  //   calcularTotal(numeroTicket);
-
-  //   limpiarInput();
-
-
-  //   }else{
-  //     valor = false;
-  //     console.log("el valor no existe"); 
-  //   }   
     
-  // }); 
-  
-  // if(valor = false){
-  //   console.log("el valor no existe");
-
-  // }
+    
 }
 
 

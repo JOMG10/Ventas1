@@ -46,9 +46,6 @@ if ($accion === 'obtenerProductos') {
     $resultado = $productos->obtenerProductoID($codigo); // Llamar a la función correspondiente
     echo json_encode($resultado);
 }
- else {
-    echo json_encode(['msg' => 'Acción no válida']);
-}
 
 ?>
 

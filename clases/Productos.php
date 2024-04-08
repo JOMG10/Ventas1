@@ -19,18 +19,14 @@ class Productos extends Conexion {
         $sql = "SELECT * FROM productos WHERE codigo = $codigo"; // Debes concatenar el valor de $id en la consulta SQL
         $result = $this->conexion->query($sql);
     
-        // Verificar si la consulta fue exitosa
         if ($result) {
-            // Si hay al menos una fila devuelta, obtén y devuelve los datos
             if ($result->num_rows > 0) {
                 $datosProducto = $result->fetch_assoc();
                 return $datosProducto;
             } else {
-                // Si no se encontraron resultados para el ID dado, devuelve un mensaje de error o un arreglo vacío, según sea necesario
-                return ['error' => 'Producto no encontrado'];
+                return ['error' => 'Error en la consulta SQL'];
             }
         } else {
-            // Si hay un error en la consulta SQL, devuelve un mensaje de error o un arreglo vacío, según sea necesario
             return ['error' => 'Error en la consulta SQL'];
         }
     }
